@@ -16,5 +16,3 @@ while True:
   time.sleep(1)
 
 print doc_api.download_id_get(status_response.download_id)
-
-print "SHITS DONE!"
