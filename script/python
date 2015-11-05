@@ -1,0 +1,20 @@
+#!/bin/sh
+set -e
+cd "`dirname \"$0\"`/.."
+
+./script/generate_language python
+
+cd test
+rm -rf venv
+which virutualenv || pip install virtualenv
+virtualenv venv
+source venv/bin/activate
+pip install ../client/
+
+if [ "$1" == "" ]; then
+  for test in $(ls *.py); do
+    python $test
+  done
+else
+  python $1.py
+fi
