@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+cd "`dirname \"$0\"`/.."
+
+if [ `which python` != "/usr/local/bin/python" ]; then
+  echo "We think you should install python through homebrew for a sudoless experience."
+  echo "Enter to continue ^C to cancel: "
+  read
+  brew install python
+fi
