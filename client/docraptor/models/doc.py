@@ -43,6 +43,7 @@ class Doc(object):
             'document_url': 'str',
             'test': 'bool',
             'strict': 'str',
+            'ignore_resource_errors': 'bool',
             'tag': 'str',
             'help': 'bool',
             'javascript': 'bool',
@@ -58,6 +59,7 @@ class Doc(object):
             'document_url': 'document_url',
             'test': 'test',
             'strict': 'strict',
+            'ignore_resource_errors': 'ignore_resource_errors',
             'tag': 'tag',
             'help': 'help',
             'javascript': 'javascript',
@@ -72,6 +74,7 @@ class Doc(object):
         self._document_url = None
         self._test = None
         self._strict = None
+        self._ignore_resource_errors = None
         self._tag = None
         self._help = None
         self._javascript = None
@@ -222,6 +225,28 @@ class Doc(object):
                 .format(allowed_values)
             )
         self._strict = strict
+
+    @property
+    def ignore_resource_errors(self):
+        """
+        Gets the ignore_resource_errors of this Doc.
+        Failed loading of images/javascripts/stylesheets/etc. will not cause the rendering to stop.
+
+        :return: The ignore_resource_errors of this Doc.
+        :rtype: bool
+        """
+        return self._ignore_resource_errors
+
+    @ignore_resource_errors.setter
+    def ignore_resource_errors(self, ignore_resource_errors):
+        """
+        Sets the ignore_resource_errors of this Doc.
+        Failed loading of images/javascripts/stylesheets/etc. will not cause the rendering to stop.
+
+        :param ignore_resource_errors: The ignore_resource_errors of this Doc.
+        :type: bool
+        """
+        self._ignore_resource_errors = ignore_resource_errors
 
     @property
     def tag(self):

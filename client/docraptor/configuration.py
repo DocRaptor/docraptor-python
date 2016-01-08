@@ -56,7 +56,7 @@ class Configuration(object):
         Constructor
         """
         # Default Base url
-        self.host = "http://localhost:3000/"
+        self.host = "https://docraptor.com/"
         # Default api client
         self.api_client = None
         # Temp file folder for downloading files
