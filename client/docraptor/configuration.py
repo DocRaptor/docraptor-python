@@ -72,6 +72,7 @@ class Configuration(object):
         # Password for HTTP basic authentication
         self.password = ""
 
+
         # Logging Settings
         self.logger = {}
         self.logger["package_logger"] = logging.getLogger("docraptor")
@@ -220,6 +221,7 @@ class Configuration(object):
                     'key': 'Authorization',
                     'value': self.get_basic_auth_token()
                 },
+
         }
 
     def to_debug_report(self):

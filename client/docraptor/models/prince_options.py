@@ -104,7 +104,7 @@ class PrinceOptions(object):
         self._http_proxy = None
         self._http_timeout = None
         self._insecure = None
-        self._media = None
+        self._media = 'print'
         self._no_author_style = None
         self._no_default_style = None
         self._no_embed_fonts = None
@@ -118,7 +118,7 @@ class PrinceOptions(object):
         self._disallow_copy = None
         self._disallow_annotate = None
         self._disallow_modify = None
-        self._input = None
+        self._input = 'html'
         self._version = None
         self._javascript = None
         self._css_dpi = None
@@ -755,3 +755,16 @@ class PrinceOptions(object):
         For `print` and `pprint`
         """
         return self.to_str()
+
+    def __eq__(self, other): 
+        """
+        Returns true if both objects are equal
+        """
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        """ 
+        Returns true if both objects are not equal
+        """
+        return not self == other
+

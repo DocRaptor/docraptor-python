@@ -65,9 +65,6 @@ class ClientApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        # verify the required parameter 'doc' is set
-        if doc is None:
-            raise ValueError("Missing the required parameter `doc` when calling `async_docs_post`")
 
         all_params = ['doc']
         all_params.append('callback')
@@ -81,6 +78,10 @@ class ClientApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
+        # verify the required parameter 'doc' is set
+        if ('doc' not in params) or (params['doc'] is None):
+            raise ValueError("Missing the required parameter `doc` when calling `async_docs_post`")
 
         resource_path = '/async_docs'.replace('{format}', 'json')
         method = 'POST'
@@ -143,9 +144,6 @@ class ClientApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        # verify the required parameter 'doc' is set
-        if doc is None:
-            raise ValueError("Missing the required parameter `doc` when calling `docs_post`")
 
         all_params = ['doc']
         all_params.append('callback')
@@ -159,6 +157,10 @@ class ClientApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
+        # verify the required parameter 'doc' is set
+        if ('doc' not in params) or (params['doc'] is None):
+            raise ValueError("Missing the required parameter `doc` when calling `docs_post`")
 
         resource_path = '/docs'.replace('{format}', 'json')
         method = 'POST'
@@ -221,9 +223,6 @@ class ClientApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        # verify the required parameter 'id' is set
-        if id is None:
-            raise ValueError("Missing the required parameter `id` when calling `download_id_get`")
 
         all_params = ['id']
         all_params.append('callback')
@@ -237,6 +236,10 @@ class ClientApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
+        # verify the required parameter 'id' is set
+        if ('id' not in params) or (params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `download_id_get`")
 
         resource_path = '/download/{id}'.replace('{format}', 'json')
         method = 'GET'
@@ -299,9 +302,6 @@ class ClientApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        # verify the required parameter 'id' is set
-        if id is None:
-            raise ValueError("Missing the required parameter `id` when calling `status_id_get`")
 
         all_params = ['id']
         all_params.append('callback')
@@ -315,6 +315,10 @@ class ClientApi(object):
                 )
             params[key] = val
         del params['kwargs']
+
+        # verify the required parameter 'id' is set
+        if ('id' not in params) or (params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `status_id_get`")
 
         resource_path = '/status/{id}'.replace('{format}', 'json')
         method = 'GET'
