@@ -31,15 +31,15 @@ docraptor.configuration.username = "YOUR_API_KEY_HERE"
 global docraptor = docraptor.ClientApi()
 
 response = docraptor.docs_post({
-  "test": True,                                                 # test documents are free but watermarked
-  "document_content": "<html><body>Python</body></html>",       # supply content directly
-  "document_url": "http://docraptor.com/examples/invoice.html", # or use a url
-  "name": "swagger-python.pdf",                                 # help you find a document later
-  "document_type": "pdf",                                       # pdf or xls or xlsx
-  # "javascript": True,                                         # enable JavaScript processing
+  "test": True,                                                   # test documents are free but watermarked
+  "document_content": "<html><body>Python</body></html>",         # supply content directly
+  # "document_url": "http://docraptor.com/examples/invoice.html", # or use a url
+  "name": "swagger-python.pdf",                                   # help you find a document later
+  "document_type": "pdf",                                         # pdf or xls or xlsx
+  # "javascript": True,                                           # enable JavaScript processing
   # "prince_options": {
-  #   "media": "screen",                                        # use screen styles instead of print styles
-  #   "baseurl": "http://hello.com",                            # pretend URL when using document_content
+  #   "media": "screen",                                          # use screen styles instead of print styles
+  #   "baseurl": "http://hello.com",                              # pretend URL when using document_content
   # },
 })
 ```
