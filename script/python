@@ -9,7 +9,7 @@ rm -rf venv
 which virutualenv || pip install virtualenv
 virtualenv venv
 source venv/bin/activate
-pip install ../client/
+pip install ../
 
 if [ "$1" == "" ]; then
   for test in $(ls *.py); do
