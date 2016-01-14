@@ -2,9 +2,8 @@
 set -e
 cd "`dirname \"$0\"`/.."
 
-./script/generate_language python
-
 cd test
+
 rm -rf venv
 which virutualenv || pip install virtualenv
 virtualenv venv
