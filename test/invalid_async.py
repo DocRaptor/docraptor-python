@@ -6,7 +6,12 @@ docraptor.configuration.username = "YOUR_API_KEY_HERE"
 
 doc_api = docraptor.ClientApi()
 
-response = doc_api.create_async_doc({"test": True, "document_content": "<html><body>Swagger Python</body></html>", "name": "s" * 201, "document_type": "pdf"})
+response = doc_api.create_async_doc({
+  "test":             True,
+  "document_content": "<html><body>Hello from Python</body></html>",
+  "name":             "s" * 201, # limit is 200 characters
+  "document_type":    "pdf",
+})
 
 status_response = None
 for x in range(0, 30):

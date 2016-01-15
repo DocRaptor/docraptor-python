@@ -6,7 +6,12 @@ docraptor.configuration.username = "YOUR_API_KEY_HERE"
 
 doc_api = docraptor.ClientApi()
 
-response = doc_api.create_async_doc({"test": True, "document_content": "<html><body>Swagger Python</body></html>", "name": "swagger-python.pdf", "document_type": "pdf"})
+response = doc_api.create_async_doc({
+  "test":             True,
+  "document_content": "<html><body>Hello from Python</body></html>",
+  "name":             "python-async.pdf",
+  "document_type":    "pdf",
+})
 
 status_response = None
 while True:
@@ -15,4 +20,4 @@ while True:
     break
   time.sleep(1)
 
-print doc_api.get_async_doc(status_response.download_id)
+doc_api.get_async_doc(status_response.download_id)
