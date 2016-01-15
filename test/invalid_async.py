@@ -2,7 +2,7 @@ import docraptor
 import time
 
 docraptor.configuration.username = "YOUR_API_KEY_HERE"
-docraptor.configuration.debug = True
+# docraptor.configuration.debug = True
 
 doc_api = docraptor.ClientApi()
 
