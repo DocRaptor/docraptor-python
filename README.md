@@ -6,8 +6,6 @@ This is a Python package for using [DocRaptor API](http://docraptor.com/document
 
 ## Installation
 
-Add the following to your `Gemfile`.
-
 ```sh
 pip install --upgrade docraptor
 ```
