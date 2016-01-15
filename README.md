@@ -23,7 +23,7 @@ See http://www.pip-installer.org/en/latest/index.html for instructions on instal
 ```python
 import docraptor
 
-docraptor.configuration.username = "YOUR_API_KEY_HERE"
+docraptor.configuration.username = "YOUR_API_KEY_HERE" # this key works for test documents
 # docraptor.configuration.debug = True
 
 global docraptor = docraptor.ClientApi()
