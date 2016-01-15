@@ -45,7 +45,7 @@ class ClientApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def async_docs_post(self, doc, **kwargs):
+    def create_async_doc(self, doc, **kwargs):
         """
         
         Creates a document asynchronously.\nYou must use a callback url or the the returned status id and the status api to find out when it completes. Then use the download api to get the document.
@@ -56,7 +56,7 @@ class ClientApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.async_docs_post(doc, callback=callback_function)
+        >>> thread = api.create_async_doc(doc, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -74,14 +74,14 @@ class ClientApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method async_docs_post" % key
+                    " to method create_async_doc" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'doc' is set
         if ('doc' not in params) or (params['doc'] is None):
-            raise ValueError("Missing the required parameter `doc` when calling `async_docs_post`")
+            raise ValueError("Missing the required parameter `doc` when calling `create_async_doc`")
 
         resource_path = '/async_docs'.replace('{format}', 'json')
         method = 'POST'
@@ -124,7 +124,7 @@ class ClientApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def docs_post(self, doc, **kwargs):
+    def create_doc(self, doc, **kwargs):
         """
         
         Creates a document synchronously.
@@ -135,7 +135,7 @@ class ClientApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.docs_post(doc, callback=callback_function)
+        >>> thread = api.create_doc(doc, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -153,14 +153,14 @@ class ClientApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method docs_post" % key
+                    " to method create_doc" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'doc' is set
         if ('doc' not in params) or (params['doc'] is None):
-            raise ValueError("Missing the required parameter `doc` when calling `docs_post`")
+            raise ValueError("Missing the required parameter `doc` when calling `create_doc`")
 
         resource_path = '/docs'.replace('{format}', 'json')
         method = 'POST'
@@ -203,7 +203,7 @@ class ClientApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def download_id_get(self, id, **kwargs):
+    def get_async_doc(self, id, **kwargs):
         """
         
         Downloads a document.
@@ -214,7 +214,7 @@ class ClientApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.download_id_get(id, callback=callback_function)
+        >>> thread = api.get_async_doc(id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -232,14 +232,14 @@ class ClientApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method download_id_get" % key
+                    " to method get_async_doc" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'id' is set
         if ('id' not in params) or (params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `download_id_get`")
+            raise ValueError("Missing the required parameter `id` when calling `get_async_doc`")
 
         resource_path = '/download/{id}'.replace('{format}', 'json')
         method = 'GET'
@@ -282,7 +282,7 @@ class ClientApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def status_id_get(self, id, **kwargs):
+    def get_async_status(self, id, **kwargs):
         """
         
         Check on the status of an asynchronously created document.
@@ -293,7 +293,7 @@ class ClientApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.status_id_get(id, callback=callback_function)
+        >>> thread = api.get_async_status(id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -311,14 +311,14 @@ class ClientApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method status_id_get" % key
+                    " to method get_async_status" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'id' is set
         if ('id' not in params) or (params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `status_id_get`")
+            raise ValueError("Missing the required parameter `id` when calling `get_async_status`")
 
         resource_path = '/status/{id}'.replace('{format}', 'json')
         method = 'GET'

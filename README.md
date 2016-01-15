@@ -30,7 +30,7 @@ docraptor.configuration.username = "YOUR_API_KEY_HERE"
 
 global docraptor = docraptor.ClientApi()
 
-response = docraptor.docs_post({
+response = docraptor.create_doc({
   "test": True,                                                   # test documents are free but watermarked
   "document_content": "<html><body>Python</body></html>",         # supply content directly
   # "document_url": "http://docraptor.com/examples/invoice.html", # or use a url
