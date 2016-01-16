@@ -26,9 +26,9 @@ import docraptor
 docraptor.configuration.username = "YOUR_API_KEY_HERE" # this key works for test documents
 # docraptor.configuration.debug = True
 
-global docraptor = docraptor.ClientApi()
+doc_api = docraptor.ClientApi()
 
-response = docraptor.create_doc({
+response = doc_api.create_doc({
   "test": True,                                                   # test documents are free but watermarked
   "document_content": "<html><body>Python</body></html>",         # supply content directly
   # "document_url": "http://docraptor.com/examples/invoice.html", # or use a url
