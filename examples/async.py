@@ -39,11 +39,11 @@ try:
       doc_response = doc_api.get_async_doc(status_response.download_id)
       shutil.move(doc_response, "/tmp/docraptor-python.pdf")
       print "Wrote PDF to /tmp/docraptor-python.pdf"
-      exit(0)
+      break
     elif status_response.status == "failed":
       print "FAILED"
       print status_response
-      exit(1)
+      break
     else:
       time.sleep(1)
 
