@@ -5,7 +5,7 @@ docraptor.configuration.username = "YOUR_API_KEY_HERE"
 
 doc_api = docraptor.ClientApi()
 
-response = doc_api.create_doc({
+doc_api.create_doc({
   "test":             True,
   "document_content": "<html><body>Hello from Python</body></html>",
   "name":             "python-sync.pdf",

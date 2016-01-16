@@ -6,7 +6,7 @@ docraptor.configuration.username = "YOUR_API_KEY_HERE"
 
 doc_api = docraptor.ClientApi()
 
-response = doc_api.create_async_doc({
+create_response = doc_api.create_async_doc({
   "test":             True,
   "document_content": "<html><body>Hello from Python</body></html>",
   "name":             "python-async.pdf",
@@ -15,7 +15,7 @@ response = doc_api.create_async_doc({
 
 status_response = None
 while True:
-  status_response = doc_api.get_async_status(response.status_id)
+  status_response = doc_api.get_async_status(create_response.status_id)
   if status_response.status == "completed":
     break
   time.sleep(1)
