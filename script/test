@@ -4,6 +4,7 @@ cd "`dirname \"$0\"`/.."
 
 cd test
 
+# check dependencies
 python --version > /dev/null     || (echo "python must be installed"; exit 1)
 virtualenv --version > /dev/null || (echo "virtualenv must be installed"; exit 1)
 
