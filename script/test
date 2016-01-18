@@ -4,6 +4,9 @@ cd "`dirname \"$0\"`/.."
 
 cd test
 
+python --version > /dev/null     || (echo "python must be installed"; exit 1)
+virtualenv --version > /dev/null || (echo "virtualenv must be installed"; exit 1)
+
 rm -rf venv
 which virutualenv || pip install virtualenv
 virtualenv venv
