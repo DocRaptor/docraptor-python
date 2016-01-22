@@ -37,7 +37,9 @@ try:
     status_response = doc_api.get_async_doc_status(create_response.status_id)
     if status_response.status == "completed":
       doc_response = doc_api.get_async_doc(status_response.download_id)
-      shutil.move(doc_response, "/tmp/docraptor-python.pdf")
+      file = open("/tmp/docraptor-python.pdf", "wb")
+      file.write(doc_response)
+      file.close
       print "Wrote PDF to /tmp/docraptor-python.pdf"
       break
     elif status_response.status == "failed":

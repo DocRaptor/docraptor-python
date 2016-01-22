@@ -140,7 +140,7 @@ class ClientApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param Doc doc: The document to be created. (required)
-        :return: file
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -198,7 +198,7 @@ class ClientApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=files,
-                                            response_type='file',
+                                            response_type='str',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -219,7 +219,7 @@ class ClientApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str id: The download_id returned from status request or a callback. (required)
-        :return: file
+        :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -277,7 +277,7 @@ class ClientApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=files,
-                                            response_type='file',
+                                            response_type='str',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

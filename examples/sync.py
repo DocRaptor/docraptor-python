@@ -32,7 +32,9 @@ try:
     #   "baseurl": "http://hello.com",                              # pretend URL when using document_content
     # },
   })
-  shutil.move(create_response, "/tmp/docraptor-python.pdf")
+  file = open("/tmp/docraptor-python.pdf", "wb")
+  file.write(create_response)
+  file.close
   print "Wrote PDF to /tmp/docraptor-python.pdf"
 
 except docraptor.rest.ApiException, error:
