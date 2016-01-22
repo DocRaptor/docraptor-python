@@ -2,7 +2,7 @@
 
 """
 ClientApi.py
-Copyright 2015 SmartBear Software
+Copyright 2016 SmartBear Software
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -282,7 +282,7 @@ class ClientApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_async_status(self, id, **kwargs):
+    def get_async_doc_status(self, id, **kwargs):
         """
         
         Check on the status of an asynchronously created document.
@@ -293,7 +293,7 @@ class ClientApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_async_status(id, callback=callback_function)
+        >>> thread = api.get_async_doc_status(id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -311,14 +311,14 @@ class ClientApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method get_async_status" % key
+                    " to method get_async_doc_status" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'id' is set
         if ('id' not in params) or (params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `get_async_status`")
+            raise ValueError("Missing the required parameter `id` when calling `get_async_doc_status`")
 
         resource_path = '/status/{id}'.replace('{format}', 'json')
         method = 'GET'

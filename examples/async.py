@@ -34,7 +34,7 @@ try:
   })
 
   while True:
-    status_response = doc_api.get_async_status(create_response.status_id)
+    status_response = doc_api.get_async_doc_status(create_response.status_id)
     if status_response.status == "completed":
       doc_response = doc_api.get_async_doc(status_response.download_id)
       shutil.move(doc_response, "/tmp/docraptor-python.pdf")

@@ -15,7 +15,7 @@ create_response= doc_api.create_async_doc({
 
 status_response = None
 for x in range(0, 30):
-  status_response = doc_api.get_async_status(create_response.status_id)
+  status_response = doc_api.get_async_doc_status(create_response.status_id)
   if status_response.status == "failed":
     exit(0)
   time.sleep(1)
