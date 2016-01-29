@@ -69,6 +69,8 @@ The majority of the code in this repo is generated using swagger-codegen on [doc
 2. Increment version in code
   - `swagger-config.json`
   - `setup.py`
+  - `docraptor/api_client.py`
+  - `docraptor/configuration.py`
 3. Update [CHANGELOG.md](CHANGELOG.md)
 4. Tag version: `git tag 'v0.0.x' && git push --tags`
 5. Push to GitHub
