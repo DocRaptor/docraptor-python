@@ -1,22 +1,22 @@
 # DocRaptor Python Native Client Library
 
-**WARNING: This code is not production ready, you should use [this](https://docraptor.com/documentation/python).**
-
 This is a Python package for using [DocRaptor API](http://docraptor.com/documentation) to convert HTML to PDF and XLSX.
+
 
 ## Installation
 
-```sh
+```bash
 pip install --upgrade docraptor
 ```
 
 or
 
-```sh
+```bash
 easy_install --upgrade docraptor
 ```
 
-See http://www.pip-installer.org/en/latest/index.html for instructions on installing pip. If you are on a system with easy_install but not pip, you can use easy_install instead. If you're not using virtualenv, you may have to prefix those commands with sudo. You can learn more about virtualenv at http://www.virtualenv.org/
+If you are on a system with `easy_install` but not [`pip`](http://www.pip-installer.org/en/latest/index.html), you can use `easy_install` instead. If you're not using [`virtualenv`](http://www.virtualenv.org/), you may have to prefix those commands with `sudo`.
+
 
 ## Usage
 
@@ -46,11 +46,12 @@ response = doc_api.create_doc({
 
 Docs created like this are limited to 60 seconds to render, check out the [async example](examples/async.py) which allows 10 minutes.
 
-
 We have guides for doing some of the common things:
+
 * [Headers and Footers](https://docraptor.com/documentation/style#pdf-headers-footers) including page skipping
 * [CSS Media Selector](https://docraptor.com/documentation/api#api_basic_pdf) to make the page look exactly as it does in your browser
 * [Protected Content](https://docraptor.com/documentation/api#api_advanced_pdf) to secure your URLs so only DocRaptor can access them
+
 
 ## More Help
 
@@ -62,6 +63,7 @@ Stuck? We're experts at using DocRaptor so please [email us](mailto:support@docr
 ## Development
 
 The majority of the code in this repo is generated using swagger-codegen on [docraptor.yaml](docraptor.yaml). You can modify this file and regenerate the client using `script/generate_language python`.
+
 
 ## Release Process
 
@@ -76,6 +78,8 @@ The majority of the code in this repo is generated using swagger-codegen on [doc
 5. Push to GitHub
 6. Build packages `python setup.py sdist bdist_wheel`
 7. Upload packages `twine upload dist/*`
+8. Update documentation on docraptor.com
+
 
 ## Version Policy
 
