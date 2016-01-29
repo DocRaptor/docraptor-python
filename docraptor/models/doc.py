@@ -136,7 +136,7 @@ class Doc(object):
     def document_content(self):
         """
         Gets the document_content of this Doc.
-        The HTML data to be transformed into a document.\nYou must supply content using document_content or document_url.
+        The HTML data to be transformed into a document. You must supply content using document_content or document_url.
 
         :return: The document_content of this Doc.
         :rtype: str
@@ -147,7 +147,7 @@ class Doc(object):
     def document_content(self, document_content):
         """
         Sets the document_content of this Doc.
-        The HTML data to be transformed into a document.\nYou must supply content using document_content or document_url.
+        The HTML data to be transformed into a document. You must supply content using document_content or document_url.
 
         :param document_content: The document_content of this Doc.
         :type: str
@@ -158,7 +158,7 @@ class Doc(object):
     def document_url(self):
         """
         Gets the document_url of this Doc.
-        The URL to fetch the HTML data to be transformed into a document.\nYou must supply content using document_content or document_url.
+        The URL to fetch the HTML data to be transformed into a document. You must supply content using document_content or document_url.
 
         :return: The document_url of this Doc.
         :rtype: str
@@ -169,7 +169,7 @@ class Doc(object):
     def document_url(self, document_url):
         """
         Sets the document_url of this Doc.
-        The URL to fetch the HTML data to be transformed into a document.\nYou must supply content using document_content or document_url.
+        The URL to fetch the HTML data to be transformed into a document. You must supply content using document_content or document_url.
 
         :param document_url: The document_url of this Doc.
         :type: str
@@ -340,7 +340,7 @@ class Doc(object):
     def callback_url(self):
         """
         Gets the callback_url of this Doc.
-        A URL that will receive a POST request after successfully completing an asynchronous document.\nThe POST data will include download_url and download_id similar to status api responses.\nWARNING: this only works on asynchronous documents.
+        A URL that will receive a POST request after successfully completing an asynchronous document. The POST data will include download_url and download_id similar to status api responses. WARNING: this only works on asynchronous documents.
 
         :return: The callback_url of this Doc.
         :rtype: str
@@ -351,7 +351,7 @@ class Doc(object):
     def callback_url(self, callback_url):
         """
         Sets the callback_url of this Doc.
-        A URL that will receive a POST request after successfully completing an asynchronous document.\nThe POST data will include download_url and download_id similar to status api responses.\nWARNING: this only works on asynchronous documents.
+        A URL that will receive a POST request after successfully completing an asynchronous document. The POST data will include download_url and download_id similar to status api responses. WARNING: this only works on asynchronous documents.
 
         :param callback_url: The callback_url of this Doc.
         :type: str
