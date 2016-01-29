@@ -28,7 +28,7 @@ import docraptor
 docraptor.configuration.username = "YOUR_API_KEY_HERE" # this key works for test documents
 # docraptor.configuration.debug = True
 
-doc_api = docraptor.ClientApi()
+doc_api = docraptor.DocApi()
 
 response = doc_api.create_doc({
   "test": True,                                                   # test documents are free but watermarked

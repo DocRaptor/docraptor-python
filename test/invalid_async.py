@@ -4,7 +4,7 @@ import time
 docraptor.configuration.username = "YOUR_API_KEY_HERE"
 # docraptor.configuration.debug = True
 
-doc_api = docraptor.ClientApi()
+doc_api = docraptor.DocApi()
 
 create_response= doc_api.create_async_doc({
   "test":             True,

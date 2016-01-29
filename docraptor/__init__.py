@@ -7,7 +7,7 @@ from .models.async_doc import AsyncDoc
 from .models.async_doc_status import AsyncDocStatus
 
 # import apis into sdk package
-from .apis.client_api import ClientApi
+from .apis.doc_api import DocApi
 
 # import ApiClient
 from .api_client import ApiClient

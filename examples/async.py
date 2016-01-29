@@ -16,7 +16,7 @@ import shutil
 
 docraptor.configuration.username = "YOUR_API_KEY_HERE" # this key works for test documents
 # docraptor.configuration.debug = True
-doc_api = docraptor.ClientApi()
+doc_api = docraptor.DocApi()
 
 try:
 
