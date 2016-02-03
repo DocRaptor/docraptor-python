@@ -47,7 +47,7 @@ class DocApi(object):
 
     def create_async_doc(self, doc, **kwargs):
         """
-        
+
         Creates a document asynchronously. You must use a callback url or the the returned status id and the status api to find out when it completes. Then use the download api to get the document.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -126,7 +126,7 @@ class DocApi(object):
 
     def create_doc(self, doc, **kwargs):
         """
-        
+
         Creates a document synchronously.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -205,7 +205,7 @@ class DocApi(object):
 
     def get_async_doc(self, id, **kwargs):
         """
-        
+
         Downloads a document.
 
         This method makes a synchronous HTTP request by default. To make an
@@ -284,7 +284,7 @@ class DocApi(object):
 
     def get_async_doc_status(self, id, **kwargs):
         """
-        
+
         Check on the status of an asynchronously created document.
 
         This method makes a synchronous HTTP request by default. To make an
