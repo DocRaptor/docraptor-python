@@ -12,9 +12,9 @@ try:
     "name":             "s" * 201,
     "document_type":    "pdf",
   })
-except docraptor.rest.ApiException, e:
+except docraptor.rest.ApiException as e:
   exit(0)
 
-print "Exception expected, but not raised"
+print("Exception expected, but not raised")
 exit(1)
 

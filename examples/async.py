@@ -40,17 +40,17 @@ try:
       file = open("/tmp/docraptor-python.pdf", "wb")
       file.write(doc_response)
       file.close
-      print "Wrote PDF to /tmp/docraptor-python.pdf"
+      print("Wrote PDF to /tmp/docraptor-python.pdf")
       break
     elif status_response.status == "failed":
-      print "FAILED"
-      print status_response
+      print("FAILED")
+      print(status_response)
       break
     else:
       time.sleep(1)
 
-except docraptor.rest.ApiException, error:
-  print error
-  print error.message
-  print error.code
-  print error.response_body
+except docraptor.rest.ApiException as error:
+  print(error)
+  print(error.message)
+  print(error.code)
+  print(error.response_body)

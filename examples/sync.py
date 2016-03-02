@@ -35,10 +35,10 @@ try:
   file = open("/tmp/docraptor-python.pdf", "wb")
   file.write(create_response)
   file.close
-  print "Wrote PDF to /tmp/docraptor-python.pdf"
+  print("Wrote PDF to /tmp/docraptor-python.pdf")
 
-except docraptor.rest.ApiException, error:
-  print error
-  print error.message
-  print error.code
-  print error.response_body
+except docraptor.rest.ApiException as error:
+  print(error)
+  print(error.message)
+  print(error.code)
+  print(error.response_body)

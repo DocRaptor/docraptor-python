@@ -20,5 +20,5 @@ for x in range(0, 30):
     exit(0)
   time.sleep(1)
 
-print "Exception expected, but not raised"
+print("Exception expected, but not raised")
 exit(1)
