@@ -10,10 +10,10 @@ python3 --version > /dev/null     || (echo "python3 must be installed"; exit 1)
 virtualenv --version > /dev/null || (echo "virtualenv must be installed"; exit 1)
 
 for version in 2 3; do
-  rm -rf venv
-  virtualenv --python=`which python$version` venv
-  source venv/bin/activate
-  pip install ../
+  rm -rf venv-$version
+  virtualenv --python=`which python$version` venv-$version
+  source venv-$version/bin/activate
+  pip install --upgrade ../
 
   # runs a test file with PASS/FAIL message
   run_test() {
