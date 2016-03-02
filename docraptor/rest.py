@@ -165,11 +165,6 @@ class RESTClientObject(object):
 
         r = RESTResponse(r)
 
-        # In the python 3, the response.data is bytes.
-        # we need to decode it to string.
-        if sys.version_info > (3,):
-            r.data = r.data.decode('utf8')
-
         # log response body
         logger.debug("response body: %s" % r.data)
 
