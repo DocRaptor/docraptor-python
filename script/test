@@ -5,24 +5,26 @@ cd "`dirname \"$0\"`/.."
 cd test
 
 # check dependencies
-python --version > /dev/null     || (echo "python must be installed"; exit 1)
+python2 --version > /dev/null     || (echo "python2 must be installed"; exit 1)
+python3 --version > /dev/null     || (echo "python3 must be installed"; exit 1)
 virtualenv --version > /dev/null || (echo "virtualenv must be installed"; exit 1)
 
-rm -rf venv
-which virutualenv || pip install virtualenv
-virtualenv venv
-source venv/bin/activate
-pip install ../
+for version in 2 3; do
+  rm -rf venv
+  virtualenv --python=`which python$version` venv
+  source venv/bin/activate
+  pip install ../
 
-# runs a test file with PASS/FAIL message
-run_test() {
-  python $1 && echo "PASS $1" || (echo "FAIL $1"; exit 1)
-}
+  # runs a test file with PASS/FAIL message
+  run_test() {
+    python $1 && echo "PASS $1 (Python $version)" || (echo "FAIL $1 (Python $version)"; exit 1)
+  }
 
-if [ "$1" == "" ]; then
-  for test in $(ls *.py); do
-    run_test $test
-  done
-else
-  run_test $1.py
-fi
+  if [ "$1" == "" ]; then
+    for test in $(ls *.py); do
+      run_test $test
+    done
+  else
+    run_test $1.py
+  fi
+done
