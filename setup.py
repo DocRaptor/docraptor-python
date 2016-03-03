@@ -4,7 +4,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "docraptor"
-VERSION = "0.2.0"
+VERSION = "0.2.1"
 
 
 

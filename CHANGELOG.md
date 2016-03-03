@@ -1,3 +1,6 @@
+### 0.2.1 [March 3, 2016]
+* Python 3 support
+
 ### 0.2.0 [January 29, 2016]
 * **BREAKING CHANGE**: Rename ClientApi to DocApi
 
