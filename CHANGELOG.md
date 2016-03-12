@@ -1,3 +1,6 @@
+### 0.3.0 [March 12, 2016]
+* Added support for prince_options[debug]
+
 ### 0.2.1 [March 3, 2016]
 * Python 3 support
 
