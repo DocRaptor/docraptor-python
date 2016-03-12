@@ -70,18 +70,21 @@ The generated client needed a few fixes
 
 ## Release Process
 
-1. `script/test`
-2. Increment version in code
+1. Pull latest master
+2. Merge feature branch(es) into master
+3. `script/test`
+4. Increment version in code:
   - `swagger-config.json`
   - `setup.py`
   - `docraptor/api_client.py`
   - `docraptor/configuration.py`
-3. Update [CHANGELOG.md](CHANGELOG.md)
-4. Tag version: `git tag 'v0.0.x' && git push --tags`
-5. Push to GitHub
-6. Build packages `python setup.py sdist bdist_wheel`
-7. Upload packages `twine upload dist/*`
-8. Update documentation on docraptor.com
+5. Update [CHANGELOG.md](CHANGELOG.md)
+6. Commit "Release version vX.Y.Z"
+7. Push to GitHub
+8. Tag version: `git tag 'vX.Y.Z' && git push --tags`
+9. Build packages `python setup.py sdist bdist_wheel`
+10. Upload packages `twine upload dist/*`
+11. Update documentation on docraptor.com
 
 
 ## Version Policy
