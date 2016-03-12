@@ -59,6 +59,7 @@ class PrinceOptions(object):
             'disallow_copy': 'bool',
             'disallow_annotate': 'bool',
             'disallow_modify': 'bool',
+            'debug': 'bool',
             'input': 'str',
             'version': 'str',
             'javascript': 'bool',
@@ -89,6 +90,7 @@ class PrinceOptions(object):
             'disallow_copy': 'disallow_copy',
             'disallow_annotate': 'disallow_annotate',
             'disallow_modify': 'disallow_modify',
+            'debug': 'debug',
             'input': 'input',
             'version': 'version',
             'javascript': 'javascript',
@@ -118,6 +120,7 @@ class PrinceOptions(object):
         self._disallow_copy = None
         self._disallow_annotate = None
         self._disallow_modify = None
+        self._debug = None
         self._input = 'html'
         self._version = None
         self._javascript = None
@@ -607,6 +610,28 @@ class PrinceOptions(object):
         :type: bool
         """
         self._disallow_modify = disallow_modify
+
+    @property
+    def debug(self):
+        """
+        Gets the debug of this PrinceOptions.
+        Enable Prince debug mode.
+
+        :return: The debug of this PrinceOptions.
+        :rtype: bool
+        """
+        return self._debug
+
+    @debug.setter
+    def debug(self, debug):
+        """
+        Sets the debug of this PrinceOptions.
+        Enable Prince debug mode.
+
+        :param debug: The debug of this PrinceOptions.
+        :type: bool
+        """
+        self._debug = debug
 
     @property
     def input(self):
