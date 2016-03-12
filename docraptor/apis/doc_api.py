@@ -84,16 +84,14 @@ class DocApi(object):
             raise ValueError("Missing the required parameter `doc` when calling `create_async_doc`")
 
         resource_path = '/async_docs'.replace('{format}', 'json')
-        method = 'POST'
-
         path_params = {}
 
         query_params = {}
 
         header_params = {}
 
-        form_params = {}
-        files = {}
+        form_params = []
+        local_var_files = {}
 
         body_params = None
         if 'doc' in params:
@@ -112,13 +110,13 @@ class DocApi(object):
         # Authentication setting
         auth_settings = ['basicAuth']
 
-        response = self.api_client.call_api(resource_path, method,
+        response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
                                             query_params,
                                             header_params,
                                             body=body_params,
                                             post_params=form_params,
-                                            files=files,
+                                            files=local_var_files,
                                             response_type='AsyncDoc',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
@@ -163,16 +161,14 @@ class DocApi(object):
             raise ValueError("Missing the required parameter `doc` when calling `create_doc`")
 
         resource_path = '/docs'.replace('{format}', 'json')
-        method = 'POST'
-
         path_params = {}
 
         query_params = {}
 
         header_params = {}
 
-        form_params = {}
-        files = {}
+        form_params = []
+        local_var_files = {}
 
         body_params = None
         if 'doc' in params:
@@ -191,13 +187,13 @@ class DocApi(object):
         # Authentication setting
         auth_settings = ['basicAuth']
 
-        response = self.api_client.call_api(resource_path, method,
+        response = self.api_client.call_api(resource_path, 'POST',
                                             path_params,
                                             query_params,
                                             header_params,
                                             body=body_params,
                                             post_params=form_params,
-                                            files=files,
+                                            files=local_var_files,
                                             response_type='str',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
@@ -242,8 +238,6 @@ class DocApi(object):
             raise ValueError("Missing the required parameter `id` when calling `get_async_doc`")
 
         resource_path = '/download/{id}'.replace('{format}', 'json')
-        method = 'GET'
-
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
@@ -252,8 +246,8 @@ class DocApi(object):
 
         header_params = {}
 
-        form_params = {}
-        files = {}
+        form_params = []
+        local_var_files = {}
 
         body_params = None
 
@@ -270,13 +264,13 @@ class DocApi(object):
         # Authentication setting
         auth_settings = ['basicAuth']
 
-        response = self.api_client.call_api(resource_path, method,
+        response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
                                             query_params,
                                             header_params,
                                             body=body_params,
                                             post_params=form_params,
-                                            files=files,
+                                            files=local_var_files,
                                             response_type='str',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
@@ -321,8 +315,6 @@ class DocApi(object):
             raise ValueError("Missing the required parameter `id` when calling `get_async_doc_status`")
 
         resource_path = '/status/{id}'.replace('{format}', 'json')
-        method = 'GET'
-
         path_params = {}
         if 'id' in params:
             path_params['id'] = params['id']
@@ -331,8 +323,8 @@ class DocApi(object):
 
         header_params = {}
 
-        form_params = {}
-        files = {}
+        form_params = []
+        local_var_files = {}
 
         body_params = None
 
@@ -349,13 +341,13 @@ class DocApi(object):
         # Authentication setting
         auth_settings = ['basicAuth']
 
-        response = self.api_client.call_api(resource_path, method,
+        response = self.api_client.call_api(resource_path, 'GET',
                                             path_params,
                                             query_params,
                                             header_params,
                                             body=body_params,
                                             post_params=form_params,
-                                            files=files,
+                                            files=local_var_files,
                                             response_type='AsyncDocStatus',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
