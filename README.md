@@ -65,7 +65,7 @@ Stuck? We're experts at using DocRaptor so please [email us](mailto:support@docr
 The majority of the code in this repo is generated using swagger-codegen on [docraptor.yaml](docraptor.yaml). You can modify this file and regenerate the client using `script/generate_language python`.
 
 The generated client needed a few fixes
-- Python3 was forcing all encoding to utf8 on binary data
+- https://github.com/swagger-api/swagger-codegen/issues/2305
 
 
 ## Release Process
