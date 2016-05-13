@@ -4,7 +4,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "docraptor"
-VERSION = "0.3.0"
+VERSION = "1.0.0"
 
 
 
@@ -28,7 +28,7 @@ setup(
     url="https://github.com/docraptor/docraptor-python",
     keywords=["DocRaptor", "API", "PDF", "XLS", "XLSX", "HTML"],
     classifiers=[ # see https://pypi.python.org/pypi?%3Aaction=list_classifiers
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
 
         "Environment :: Web Environment",
 

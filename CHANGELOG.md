@@ -1,3 +1,6 @@
+### 1.0.0 [May 13, 2016]
+* No significant code changes
+
 ### 0.3.0 [March 12, 2016]
 * Added support for prince_options[debug]
 
