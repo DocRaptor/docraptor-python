@@ -40,6 +40,7 @@ class PrinceOptions(object):
             'baseurl': 'str',
             'no_xinclude': 'bool',
             'no_network': 'bool',
+            'no_parallel_downloads': 'bool',
             'http_user': 'str',
             'http_password': 'str',
             'http_proxy': 'str',
@@ -71,6 +72,7 @@ class PrinceOptions(object):
             'baseurl': 'baseurl',
             'no_xinclude': 'no_xinclude',
             'no_network': 'no_network',
+            'no_parallel_downloads': 'no_parallel_downloads',
             'http_user': 'http_user',
             'http_password': 'http_password',
             'http_proxy': 'http_proxy',
@@ -101,6 +103,7 @@ class PrinceOptions(object):
         self._baseurl = None
         self._no_xinclude = None
         self._no_network = None
+        self._no_parallel_downloads = None
         self._http_user = None
         self._http_password = None
         self._http_proxy = None
@@ -192,6 +195,28 @@ class PrinceOptions(object):
         :type: bool
         """
         self._no_network = no_network
+
+    @property
+    def no_parallel_downloads(self):
+        """
+        Gets the no_parallel_downloads of this PrinceOptions.
+        Disable parallel downloads.
+
+        :return: The no_parallel_downloads of this PrinceOptions.
+        :rtype: bool
+        """
+        return self._no_parallel_downloads
+
+    @no_parallel_downloads.setter
+    def no_parallel_downloads(self, no_parallel_downloads):
+        """
+        Sets the no_parallel_downloads of this PrinceOptions.
+        Disable parallel downloads.
+
+        :param no_parallel_downloads: The no_parallel_downloads of this PrinceOptions.
+        :type: bool
+        """
+        self._no_parallel_downloads = no_parallel_downloads
 
     @property
     def http_user(self):
