@@ -2,9 +2,16 @@
 set -e
 cd "`dirname \"$0\"`/.."
 
-if [ `which python` != "/usr/local/bin/python" ]; then
+if [[ `which python` != "/usr/local/bin/python" ]]; then
   echo "We think you should install python through homebrew for a sudoless experience."
   echo "Enter to continue ^C to cancel: "
   read
   brew install python
+fi
+
+if [[ `which python3` != "/usr/local/bin/python3" ]]; then
+  echo "We think you should install python3 through homebrew for a sudoless experience."
+  echo "Enter to continue ^C to cancel: "
+  read
+  brew install python3
 fi
