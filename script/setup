@@ -15,3 +15,6 @@ if [[ `which python3` != "/usr/local/bin/python3" ]]; then
   read
   brew install python3
 fi
+
+pip  install --upgrade virtualenv
+pip3 install --upgrade virtualenv
