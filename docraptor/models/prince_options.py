@@ -200,7 +200,7 @@ class PrinceOptions(object):
     def no_parallel_downloads(self):
         """
         Gets the no_parallel_downloads of this PrinceOptions.
-        Disable parallel downloads.
+        Disables parallel fetching of assets during PDF creation. Useful if your asset host has strict rate limiting.
 
         :return: The no_parallel_downloads of this PrinceOptions.
         :rtype: bool
@@ -211,7 +211,7 @@ class PrinceOptions(object):
     def no_parallel_downloads(self, no_parallel_downloads):
         """
         Sets the no_parallel_downloads of this PrinceOptions.
-        Disable parallel downloads.
+        Disables parallel fetching of assets during PDF creation. Useful if your asset host has strict rate limiting.
 
         :param no_parallel_downloads: The no_parallel_downloads of this PrinceOptions.
         :type: bool
