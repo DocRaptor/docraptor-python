@@ -1,3 +1,6 @@
+### 1.1.0 [September 27, 2016]
+* Added support for prince_options[no_parallel_downloads]
+
 ### 1.0.0 [May 13, 2016]
 * No significant code changes
 
