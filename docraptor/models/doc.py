@@ -37,6 +37,7 @@ class Doc(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'pipeline': 'str',
             'name': 'str',
             'document_type': 'str',
             'document_content': 'str',
@@ -53,6 +54,7 @@ class Doc(object):
         }
 
         self.attribute_map = {
+            'pipeline': 'pipeline',
             'name': 'name',
             'document_type': 'document_type',
             'document_content': 'document_content',
@@ -68,6 +70,7 @@ class Doc(object):
             'prince_options': 'prince_options'
         }
 
+        self._pipeline = None
         self._name = None
         self._document_type = None
         self._document_content = None
@@ -81,6 +84,28 @@ class Doc(object):
         self._referrer = None
         self._callback_url = None
         self._prince_options = None
+
+    @property
+    def pipeline(self):
+        """
+        Gets the pipeline of this Doc.
+        Specify a specific verison of the DocRaptor Pipeline to use.
+
+        :return: The pipeline of this Doc.
+        :rtype: str
+        """
+        return self._pipeline
+
+    @pipeline.setter
+    def pipeline(self, pipeline):
+        """
+        Sets the pipeline of this Doc.
+        Specify a specific verison of the DocRaptor Pipeline to use.
+
+        :param pipeline: The pipeline of this Doc.
+        :type: str
+        """
+        self._pipeline = pipeline
 
     @property
     def name(self):
