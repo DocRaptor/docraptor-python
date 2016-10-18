@@ -24,7 +24,6 @@ try:
     "test": True,                                                   # test documents are free but watermarked
     "document_content": "<html><body>Hello World</body></html>",    # supply content directly
     # "document_url": "http://docraptor.com/examples/invoice.html", # or use a url
-    "name": "docraptor-python.pdf",                                 # help you find a document later
     "document_type": "pdf",                                         # pdf or xls or xlsx
     # "javascript": True,                                           # enable JavaScript processing
     # "prince_options": {
