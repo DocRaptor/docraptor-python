@@ -9,5 +9,5 @@ doc_api.create_doc({
   "test":             True,
   "document_content": "<html><body>Hello from Python</body></html>",
   "name":             "python-sync.pdf",
-  "document_type":    "pdf",
+  "type":             "pdf",
 })

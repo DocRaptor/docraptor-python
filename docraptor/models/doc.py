@@ -37,8 +37,9 @@ class Doc(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'pipeline': 'str',
             'name': 'str',
-            'document_type': 'str',
+            'type': 'str',
             'document_content': 'str',
             'document_url': 'str',
             'test': 'bool',
@@ -53,8 +54,9 @@ class Doc(object):
         }
 
         self.attribute_map = {
+            'pipeline': 'pipeline',
             'name': 'name',
-            'document_type': 'document_type',
+            'type': 'type',
             'document_content': 'document_content',
             'document_url': 'document_url',
             'test': 'test',
@@ -68,8 +70,9 @@ class Doc(object):
             'prince_options': 'prince_options'
         }
 
+        self._pipeline = None
         self._name = None
-        self._document_type = None
+        self._type = None
         self._document_content = None
         self._document_url = None
         self._test = True
@@ -81,6 +84,28 @@ class Doc(object):
         self._referrer = None
         self._callback_url = None
         self._prince_options = None
+
+    @property
+    def pipeline(self):
+        """
+        Gets the pipeline of this Doc.
+        Specify a specific verison of the DocRaptor Pipeline to use.
+
+        :return: The pipeline of this Doc.
+        :rtype: str
+        """
+        return self._pipeline
+
+    @pipeline.setter
+    def pipeline(self, pipeline):
+        """
+        Sets the pipeline of this Doc.
+        Specify a specific verison of the DocRaptor Pipeline to use.
+
+        :param pipeline: The pipeline of this Doc.
+        :type: str
+        """
+        self._pipeline = pipeline
 
     @property
     def name(self):
@@ -105,32 +130,32 @@ class Doc(object):
         self._name = name
 
     @property
-    def document_type(self):
+    def type(self):
         """
-        Gets the document_type of this Doc.
-        The type of document being created.
+        Gets the type of this Doc.
+        The kind of document being created.
 
-        :return: The document_type of this Doc.
+        :return: The type of this Doc.
         :rtype: str
         """
-        return self._document_type
+        return self._type
 
-    @document_type.setter
-    def document_type(self, document_type):
+    @type.setter
+    def type(self, type):
         """
-        Sets the document_type of this Doc.
-        The type of document being created.
+        Sets the type of this Doc.
+        The kind of document being created.
 
-        :param document_type: The document_type of this Doc.
+        :param type: The type of this Doc.
         :type: str
         """
         allowed_values = ["pdf", "xls", "xlsx"]
-        if document_type not in allowed_values:
+        if type not in allowed_values:
             raise ValueError(
-                "Invalid value for `document_type`, must be one of {0}"
+                "Invalid value for `type`, must be one of {0}"
                 .format(allowed_values)
             )
-        self._document_type = document_type
+        self._type = type
 
     @property
     def document_content(self):

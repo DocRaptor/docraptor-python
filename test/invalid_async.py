@@ -10,7 +10,7 @@ create_response= doc_api.create_async_doc({
   "test":             True,
   "document_content": "<html><body>Hello from Python</body></html>",
   "name":             "s" * 201, # limit is 200 characters
-  "document_type":    "pdf",
+  "type":             "pdf",
 })
 
 status_response = None
