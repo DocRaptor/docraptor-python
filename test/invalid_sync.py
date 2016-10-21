@@ -10,7 +10,7 @@ try:
     "test":             True,
     "document_content": "<html><body>Hello from Python</body></html>",
     "name":             "s" * 201,
-    "document_type":    "pdf",
+    "type":             "pdf",
   })
 except docraptor.rest.ApiException as e:
   exit(0)

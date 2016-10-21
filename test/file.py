@@ -9,7 +9,7 @@ create_response = doc_api.create_doc({
   "test": True,
   "document_content": "<html><body>Hello World</body></html>",
   "name": "docraptor-python.pdf",
-  "document_type": "pdf",
+  "type": "pdf",
 })
 file = open("/tmp/docraptor-python.pdf", "wb")
 file.write(create_response)
