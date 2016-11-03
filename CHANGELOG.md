@@ -1,3 +1,9 @@
+### 1.2.0 [November 3, 2016]
+* Added support for the pipeline API parameter
+
+### 1.1.0 [September 27, 2016]
+* Added support for prince_options[no_parallel_downloads]
+
 ### 1.0.0 [May 13, 2016]
 * No significant code changes
 

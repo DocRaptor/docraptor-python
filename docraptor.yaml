@@ -1,7 +1,7 @@
 swagger: '2.0'
 
 info:
-  version: "1.1.0"
+  version: "1.2.0"
   title: DocRaptor v1
 
 host: docraptor.com
@@ -144,6 +144,9 @@ definitions:
       - document_type
       - document_content
     properties:
+      pipeline:
+        type: string
+        description: Specify a specific verison of the DocRaptor Pipeline to use.
       name:
         type: string
         description: A name for identifying your document.
@@ -214,6 +217,9 @@ definitions:
       no_network:
         type: boolean
         description: Disable network access.
+      no_parallel_downloads:
+        type: boolean
+        description: Disables parallel fetching of assets during PDF creation. Useful if your asset host has strict rate limiting.
       http_user:
         type: string
         description: Set the user for HTTP authentication.
