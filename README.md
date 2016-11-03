@@ -85,7 +85,8 @@ The generated client needed a few fixes
 9. Clean out any old packages `rm dist/*`
 10. Build packages `python setup.py sdist bdist_wheel`
 11. Upload packages `twine upload dist/*`
-12. Update documentation on docraptor.com
+12. Verify package release at https://pypi.python.org/pypi/docraptor
+13. Update documentation on docraptor.com
 
 
 ## Version Policy
