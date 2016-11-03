@@ -82,9 +82,10 @@ The generated client needed a few fixes
 6. Commit "Release version vX.Y.Z"
 7. Push to GitHub
 8. Tag version: `git tag 'vX.Y.Z' && git push --tags`
-9. Build packages `python setup.py sdist bdist_wheel`
-10. Upload packages `twine upload dist/*`
-11. Update documentation on docraptor.com
+9. Clean out any old packages `rm dist/*`
+10. Build packages `python setup.py sdist bdist_wheel`
+11. Upload packages `twine upload dist/*`
+12. Update documentation on docraptor.com
 
 
 ## Version Policy
