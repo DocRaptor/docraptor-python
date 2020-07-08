@@ -5,11 +5,10 @@ cd "$(dirname "$0")/.."
 cd test
 
 # check dependencies
-python2 --version > /dev/null     || (echo "python2 must be installed"; exit 1)
 python3 --version > /dev/null     || (echo "python3 must be installed"; exit 1)
 virtualenv --version > /dev/null || (echo "virtualenv must be installed"; exit 1)
 
-for version in 2 3; do
+for version in 3; do
   rm -rf venv-$version
   virtualenv --python="$(which python$version)" "venv-$version"
   source venv-$version/bin/activate
