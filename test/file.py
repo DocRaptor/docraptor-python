@@ -16,3 +16,10 @@ create_response = doc_api.create_doc({
 file = open("/tmp/docraptor-python.pdf", "wb")
 file.write(create_response)
 file.close
+
+file = open("/tmp/docraptor-python.pdf", "rb")
+first_line = file.readline().decode('cp437')
+if "%PDF-1.5" not in first_line:
+  raise ValueError("Invalid PDF")
+
+
