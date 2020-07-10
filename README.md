@@ -25,10 +25,11 @@ See [examples](examples/) for runnable examples with file output, error handling
 ```python
 import docraptor
 
-docraptor.configuration.username = "YOUR_API_KEY_HERE" # this key works for test documents
-# docraptor.configuration.debug = True
+configuration = docraptor.Configuration()
+configuration.username = "YOUR_API_KEY_HERE" # this key works for test documents
+# configuration.debug = True
 
-doc_api = docraptor.DocApi()
+doc_api = docraptor.DocApi(docraptor.ApiClient(configuration))
 
 response = doc_api.create_doc({
   "test": True,                                                   # test documents are free but watermarked
