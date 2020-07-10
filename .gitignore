@@ -2,6 +2,7 @@
 swagger-codegen
 git_push.sh
 .travis.yml
+.docraptor_key
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
