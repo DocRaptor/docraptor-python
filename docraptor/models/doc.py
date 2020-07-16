@@ -31,12 +31,12 @@ class Doc(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'pipeline': 'str',
         'name': 'str',
         'document_type': 'str',
         'document_content': 'str',
         'document_url': 'str',
         'test': 'bool',
+        'pipeline': 'str',
         'strict': 'str',
         'ignore_resource_errors': 'bool',
         'ignore_console_messages': 'bool',
@@ -51,12 +51,12 @@ class Doc(object):
     }
 
     attribute_map = {
-        'pipeline': 'pipeline',
         'name': 'name',
         'document_type': 'document_type',
         'document_content': 'document_content',
         'document_url': 'document_url',
         'test': 'test',
+        'pipeline': 'pipeline',
         'strict': 'strict',
         'ignore_resource_errors': 'ignore_resource_errors',
         'ignore_console_messages': 'ignore_console_messages',
@@ -70,15 +70,15 @@ class Doc(object):
         'prince_options': 'prince_options'
     }
 
-    def __init__(self, pipeline=None, name=None, document_type=None, document_content=None, document_url=None, test=True, strict='none', ignore_resource_errors=True, ignore_console_messages=False, tag=None, help=False, javascript=False, referrer=None, callback_url=None, hosted_download_limit=None, hosted_expires_at=None, prince_options=None):  # noqa: E501
+    def __init__(self, name=None, document_type=None, document_content=None, document_url=None, test=True, pipeline=None, strict=None, ignore_resource_errors=True, ignore_console_messages=False, tag=None, help=False, javascript=False, referrer=None, callback_url=None, hosted_download_limit=None, hosted_expires_at=None, prince_options=None):  # noqa: E501
         """Doc - a model defined in Swagger"""  # noqa: E501
 
-        self._pipeline = None
         self._name = None
         self._document_type = None
         self._document_content = None
         self._document_url = None
         self._test = None
+        self._pipeline = None
         self._strict = None
         self._ignore_resource_errors = None
         self._ignore_console_messages = None
@@ -92,8 +92,6 @@ class Doc(object):
         self._prince_options = None
         self.discriminator = None
 
-        if pipeline is not None:
-            self.pipeline = pipeline
         self.name = name
         self.document_type = document_type
         self.document_content = document_content
@@ -101,6 +99,8 @@ class Doc(object):
             self.document_url = document_url
         if test is not None:
             self.test = test
+        if pipeline is not None:
+            self.pipeline = pipeline
         if strict is not None:
             self.strict = strict
         if ignore_resource_errors is not None:
@@ -123,29 +123,6 @@ class Doc(object):
             self.hosted_expires_at = hosted_expires_at
         if prince_options is not None:
             self.prince_options = prince_options
-
-    @property
-    def pipeline(self):
-        """Gets the pipeline of this Doc.  # noqa: E501
-
-        Specify a specific verison of the DocRaptor Pipeline to use.  # noqa: E501
-
-        :return: The pipeline of this Doc.  # noqa: E501
-        :rtype: str
-        """
-        return self._pipeline
-
-    @pipeline.setter
-    def pipeline(self, pipeline):
-        """Sets the pipeline of this Doc.
-
-        Specify a specific verison of the DocRaptor Pipeline to use.  # noqa: E501
-
-        :param pipeline: The pipeline of this Doc.  # noqa: E501
-        :type: str
-        """
-
-        self._pipeline = pipeline
 
     @property
     def name(self):
@@ -275,6 +252,29 @@ class Doc(object):
         self._test = test
 
     @property
+    def pipeline(self):
+        """Gets the pipeline of this Doc.  # noqa: E501
+
+        Specify a specific verison of the DocRaptor Pipeline to use.  # noqa: E501
+
+        :return: The pipeline of this Doc.  # noqa: E501
+        :rtype: str
+        """
+        return self._pipeline
+
+    @pipeline.setter
+    def pipeline(self, pipeline):
+        """Sets the pipeline of this Doc.
+
+        Specify a specific verison of the DocRaptor Pipeline to use.  # noqa: E501
+
+        :param pipeline: The pipeline of this Doc.  # noqa: E501
+        :type: str
+        """
+
+        self._pipeline = pipeline
+
+    @property
     def strict(self):
         """Gets the strict of this Doc.  # noqa: E501
 
@@ -294,7 +294,7 @@ class Doc(object):
         :param strict: The strict of this Doc.  # noqa: E501
         :type: str
         """
-        allowed_values = ["none"]  # noqa: E501
+        allowed_values = ["none", "html"]  # noqa: E501
         if strict not in allowed_values:
             raise ValueError(
                 "Invalid value for `strict` ({0}), must be one of {1}"  # noqa: E501
