@@ -614,7 +614,7 @@ class DocApi(object):
 
         :param async_req bool
         :param str id: The status_id returned when creating an asynchronous document. (required)
-        :return: DocStatus
+        :return: AsyncDocStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -636,7 +636,7 @@ class DocApi(object):
 
         :param async_req bool
         :param str id: The status_id returned when creating an asynchronous document. (required)
-        :return: DocStatus
+        :return: AsyncDocStatus
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -690,7 +690,7 @@ class DocApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='DocStatus',  # noqa: E501
+            response_type='AsyncDocStatus',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

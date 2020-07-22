@@ -16,6 +16,7 @@ from __future__ import absolute_import
 
 # import models into model package
 from docraptor.models.async_doc import AsyncDoc
+from docraptor.models.async_doc_status import AsyncDocStatus
 from docraptor.models.doc import Doc
-from docraptor.models.doc_status import DocStatus
 from docraptor.models.prince_options import PrinceOptions
+from docraptor.models.doc_status import DocStatus
