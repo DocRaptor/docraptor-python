@@ -1,10 +1,8 @@
 import docraptor
 
-configuration = docraptor.Configuration()
-configuration.username = 'YOUR_API_KEY_HERE'
-# configuration.debug = True
-
-doc_api = docraptor.DocApi(docraptor.ApiClient(configuration))
+doc_api = docraptor.DocApi()
+doc_api.api_client.configuration.username = 'YOUR_API_KEY_HERE'
+# doc_api.api_client.configuration.debug = True
 
 try:
   doc_api.create_doc({

@@ -8,9 +8,9 @@ with open("../.docraptor_key") as f:
 if not api_key:
   raise ValueError("Please put a valid (paid plan) api key in the .docraptor_key file when testing this feature.")
 
-configuration = docraptor.Configuration()
-configuration.username = api_key
-# configuration.debug = True
+doc_api = docraptor.DocApi()
+doc_api.api_client.configuration.username = api_key
+# doc_api.api_client.configuration.debug = True
 
 tomorrow = datetime.datetime.now() + datetime.timedelta(days=1)
 tomorrow_s = tomorrow.strftime('%Y-%m-%dT%H:%M:%S%z')
