@@ -15,7 +15,6 @@ doc_api.api_client.configuration.username = api_key
 tomorrow = datetime.datetime.now() + datetime.timedelta(days=1)
 tomorrow_s = tomorrow.strftime('%Y-%m-%dT%H:%M:%S%z')
 
-doc_api = docraptor.DocApi(docraptor.ApiClient(configuration))
 doc_status = doc_api.create_hosted_doc({
   "test":             True,
   "document_content": "<html><body>Hello from Python</body></html>",
