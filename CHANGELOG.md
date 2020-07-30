@@ -1,3 +1,10 @@
+### 2.0.0 [July 31, 2020]
+* Drop Support for Python 2
+  _(We will now only develop and test against Python 3)_
+* Add support for hosted documents
+* Upgrade to latest swagger 2.4.14
+* **BREAKING CHANGE**: DocApi configuration must now be configured per instance
+
 ### 1.2.0 [November 3, 2016]
 * Added support for the pipeline API parameter
 
