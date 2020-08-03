@@ -1,6 +1,6 @@
 # DocRaptor Python Native Client Library
 
-This is a Python package for using [DocRaptor API](https://docraptor.com/documentation) to convert [HTML to PDF and XLSX](https://docraptor.com). It is compatible with Python 2 and Python 3.
+This is a Python package for using [DocRaptor API](https://docraptor.com/documentation) to convert [HTML to PDF and XLSX](https://docraptor.com). It is compatible with Python 3.
 
 
 ## Installation
@@ -25,10 +25,9 @@ See [examples](examples/) for runnable examples with file output, error handling
 ```python
 import docraptor
 
-docraptor.configuration.username = "YOUR_API_KEY_HERE" # this key works for test documents
-# docraptor.configuration.debug = True
-
 doc_api = docraptor.DocApi()
+doc_api.api_client.configuration.username = 'YOUR_API_KEY_HERE'   # this key works for test documents
+# doc_api.api_client.configuration.debug = True
 
 response = doc_api.create_doc({
   "test": True,                                                   # test documents are free but watermarked

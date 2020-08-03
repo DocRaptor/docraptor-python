@@ -14,9 +14,9 @@
 import docraptor
 import shutil
 
-docraptor.configuration.username = "YOUR_API_KEY_HERE" # this key works for test documents
-# docraptor.configuration.debug = True
 doc_api = docraptor.DocApi()
+doc_api.api_client.configuration.username = 'YOUR_API_KEY_HERE' # this key works for test documents
+# doc_api.api_client.configuration.debug = True
 
 try:
 
@@ -32,9 +32,8 @@ try:
     #   "baseurl": "http://hello.com",                              # pretend URL when using document_content
     # },
   })
-  file = open("/tmp/docraptor-python.pdf", "wb")
-  file.write(create_response)
-  file.close
+  with open("/tmp/docraptor-python.pdf", "wb") as f:
+    f.write(create_response)
   print("Wrote PDF to /tmp/docraptor-python.pdf")
 
 except docraptor.rest.ApiException as error:
