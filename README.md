@@ -43,7 +43,7 @@ response = doc_api.create_doc({
 })
 ```
 
-Documents generated synchronously like above are limited to 60 seconds of generation time, the [asynchronous method](examples/async.py) allows up to 10 minutes.
+Documents created synchronously like above are limited to 60 seconds of generation time, the [asynchronous method](examples/async.py) allows up to 10 minutes.
 
 Our [styling documentation](https://docraptor.com/documentation/style) and [knowledgebase](https://help.docraptor.com/en/) contain tips and guides on creating headers, footers, page numbers, table of contents, and much more.
 
