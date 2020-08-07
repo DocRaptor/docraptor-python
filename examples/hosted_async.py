@@ -45,10 +45,6 @@ try:
     status_response = doc_api.get_async_doc_status(create_response.status_id)
     if status_response.status == "completed":
       print(f"The hosted PDF is now available for public download at {status_response.download_url}")
-      doc_response = doc_api.get_async_doc(status_response.download_id)
-      with open("/tmp/docraptor-python.pdf", "wb") as f:
-        f.write(doc_response)
-      print("Wrote PDF to /tmp/docraptor-python.pdf")
       break
     elif status_response.status == "failed":
       print("FAILED")

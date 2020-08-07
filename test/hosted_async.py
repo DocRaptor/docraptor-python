@@ -1,6 +1,7 @@
 import docraptor
 import time
 import datetime
+import urllib.request
 
 with open("../.docraptor_key") as f:
   api_key = f.readline().strip()
@@ -32,12 +33,10 @@ while True:
     raise ValueError("Failed creating hosted async document")
   time.sleep(1)
 
-doc = doc_api.get_async_doc(status_response.download_id)
+download_response = urllib.request.urlopen(status_response.download_url)
+decoded_response = download_response.read().decode('cp437')
 
-with open("/tmp/docraptor-python.pdf", "wb") as f:
-  f.write(doc)
+if not decoded_response.startswith("%PDF-1.5"):
+  raise ValueError(f"Invalid PDF expected: %PDF-1.5 recieved: {decoded_response[0:8]}")
 
-with open("/tmp/docraptor-python.pdf", "rb") as f:
-  first_line = f.readline().decode('cp437')
-  if "%PDF-1.5" not in first_line:
-    raise ValueError(f"Invalid PDF expected: %PDF-1.5 recieved: {first_line}")
+print(f"Hosted Async Download URL: {status_response.download_url}")

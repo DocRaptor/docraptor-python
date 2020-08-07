@@ -40,10 +40,6 @@ try:
     # },
   })
   print(f"The hosted PDF is now available for public download at {create_response.download_url}")
-  doc_response = doc_api.get_async_doc(create_response.download_id)
-  with open("/tmp/docraptor-python.pdf", "wb") as f:
-    f.write(doc_response)
-  print("Wrote PDF to /tmp/docraptor-python.pdf")
 
 except docraptor.rest.ApiException as error:
   print(error.status)
