@@ -46,7 +46,6 @@ try:
   print("Wrote PDF to /tmp/docraptor-python.pdf")
 
 except docraptor.rest.ApiException as error:
-  print(error)
-  print(error.message)
-  print(error.code)
-  print(error.response_body)
+  print(error.status)
+  print(error.reason)
+  print(error.body)
