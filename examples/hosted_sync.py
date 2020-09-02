@@ -22,7 +22,7 @@ import docraptor
 import shutil
 
 doc_api = docraptor.DocApi()
-doc_api.api_client.configuration.username = 'YOUR_API_KEY_HERE' # you will need a real api key to test hosted documents
+doc_api.api_client.configuration.username = 'YOUR_API_KEY_HERE'
 # doc_api.api_client.configuration.debug = True
 
 try:

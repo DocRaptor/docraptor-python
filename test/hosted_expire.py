@@ -3,14 +3,8 @@ import time
 import datetime
 import urllib.request
 
-with open("../.docraptor_key") as f:
-  api_key = f.readline().strip()
-
-if not api_key:
-  raise ValueError("Please put a valid (paid plan) api key in the .docraptor_key file when testing this feature.")
-
 doc_api = docraptor.DocApi()
-doc_api.api_client.configuration.username = api_key
+doc_api.api_client.configuration.username = 'YOUR_API_KEY_HERE'
 # doc_api.api_client.configuration.debug = True
 
 tomorrow = datetime.datetime.now() + datetime.timedelta(days=1)
