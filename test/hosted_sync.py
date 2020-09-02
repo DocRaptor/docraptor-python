@@ -29,5 +29,3 @@ decoded_response = download_response.read().decode('cp437')
 
 if not decoded_response.startswith("%PDF-1.5"):
   raise ValueError(f"Invalid PDF expected: %PDF-1.5 recieved: {decoded_response[0:8]}")
-
-print(f"Hosted Sync Download URL: {doc_status.download_url}")
