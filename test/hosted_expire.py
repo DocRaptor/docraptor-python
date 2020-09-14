@@ -1,15 +1,10 @@
 import docraptor
 import time
 import datetime
-
-with open("../.docraptor_key") as f:
-  api_key = f.readline().strip()
-
-if not api_key:
-  raise ValueError("Please put a valid (paid plan) api key in the .docraptor_key file when testing this feature.")
+import urllib.request
 
 doc_api = docraptor.DocApi()
-doc_api.api_client.configuration.username = api_key
+doc_api.api_client.configuration.username = 'YOUR_API_KEY_HERE'
 # doc_api.api_client.configuration.debug = True
 
 tomorrow = datetime.datetime.now() + datetime.timedelta(days=1)
@@ -23,19 +18,15 @@ doc_status = doc_api.create_hosted_doc({
   "hosted_expires_at": tomorrow_s,
 })
 
-doc = doc_api.get_async_doc(doc_status.download_id)
+download_response = urllib.request.urlopen(doc_status.download_url)
+decoded_response = download_response.read().decode('cp437')
 
-with open("/tmp/docraptor-python.pdf", "wb") as f:
-  f.write(doc)
-
-with open("/tmp/docraptor-python.pdf", "rb") as f:
-  first_line = f.readline().decode('cp437')
-  if "%PDF-1.5" not in first_line:
-    raise ValueError(f"Invalid PDF expected: %PDF-1.5 recieved: {first_line}")
+if not decoded_response.startswith("%PDF-1.5"):
+  raise ValueError(f"Invalid PDF expected: %PDF-1.5 recieved: {decoded_response[0:8]}")
 
 doc_api.expire(doc_status.download_id)
 try:
-  doc_api.get_async_doc(doc_status.download_id)
+  urllib.request.urlopen(doc_status.download_url)
   raise ValueError("Document should not exist")
-except docraptor.rest.ApiException:
+except urllib.error.HTTPError as error:
   success = "expected error"

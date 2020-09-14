@@ -22,7 +22,7 @@ import docraptor
 import shutil
 
 doc_api = docraptor.DocApi()
-doc_api.api_client.configuration.username = 'YOUR_API_KEY_HERE' # you will need a real api key to test hosted documents
+doc_api.api_client.configuration.username = 'YOUR_API_KEY_HERE'
 # doc_api.api_client.configuration.debug = True
 
 try:
@@ -40,13 +40,8 @@ try:
     # },
   })
   print(f"The hosted PDF is now available for public download at {create_response.download_url}")
-  doc_response = doc_api.get_async_doc(create_response.download_id)
-  with open("/tmp/docraptor-python.pdf", "wb") as f:
-    f.write(doc_response)
-  print("Wrote PDF to /tmp/docraptor-python.pdf")
 
 except docraptor.rest.ApiException as error:
-  print(error)
-  print(error.message)
-  print(error.code)
-  print(error.response_body)
+  print(error.status)
+  print(error.reason)
+  print(error.body)
