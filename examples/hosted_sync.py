@@ -13,35 +13,33 @@
 # Since this document will be hosted by DocRaptor the response from this request will return a JSON
 # formatted object containing public URL where the document can be downloaded from.
 #
-# DocRaptor supports many options for output customization, the full list is
-# https://docraptor.com/documentation/api#api_general
+# DocRaptor supports many CSS and API options for output customization. Visit
+# https://docraptor.com/documentation/ for full details.
 #
-# You can run this example with: python sync.rb
+# You can run this example with: python hosted_sync.py
 
 import docraptor
-import shutil
 
 doc_api = docraptor.DocApi()
+# this key works in test mode!
 doc_api.api_client.configuration.username = 'YOUR_API_KEY_HERE'
-# doc_api.api_client.configuration.debug = True
 
 try:
+    # different method than the non-hosted documents
+    response = doc_api.create_hosted_doc({
+        'test': True,  # test documents are free but watermarked
+        'document_type': 'pdf',
+        'document_content': '<html><body>Hello World!</body></html>',
+        # 'document_url': 'https://docraptor.com/examples/invoice.html',
+        # 'javascript': True,
+        # 'prince_options': # {
+        #    'media': 'print', # @media 'screen' or 'print' CSS
+        #    'baseurl': 'https://yoursite.com', # the base URL for any relative URLs
+        # },
+    })
 
-  create_response = doc_api.create_hosted_doc({
-    "test": True,                                                   # test documents are free but watermarked
-    "document_content": "<html><body>Hello World</body></html>",    # supply content directly
-    # "document_url": "http://docraptor.com/examples/invoice.html", # or use a url
-    "name": "docraptor-python.pdf",                                 # help you find a document later
-    "document_type": "pdf",                                         # pdf or xls or xlsx
-    # "javascript": True,                                           # enable JavaScript processing
-    # "prince_options": {
-    #   "media": "screen",                                          # use screen styles instead of print styles
-    #   "baseurl": "http://hello.com",                              # pretend URL when using document_content
-    # },
-  })
-  print(f"The hosted PDF is now available for public download at {create_response.download_url}")
-
+    print(f"The PDF is hosted at {response.download_url}")
 except docraptor.rest.ApiException as error:
-  print(error.status)
-  print(error.reason)
-  print(error.body)
+    print(error.status)
+    print(error.reason)
+    print(error.body)
