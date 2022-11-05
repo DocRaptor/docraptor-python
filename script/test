@@ -2,6 +2,9 @@
 set -e
 cd "$(dirname "$0")/.."
 
+echo "Clearing test output directory"
+rm -rf tmp/test_output/
+mkdir -p tmp/test_output
 
 [ -f script/build ] && script/build
 

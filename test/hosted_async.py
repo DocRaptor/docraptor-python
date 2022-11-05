@@ -2,6 +2,8 @@ import docraptor
 import time
 import datetime
 import urllib.request
+import os
+import platform
 
 doc_api = docraptor.DocApi()
 doc_api.api_client.configuration.username = 'YOUR_API_KEY_HERE'
@@ -28,7 +30,21 @@ while True:
   time.sleep(1)
 
 download_response = urllib.request.urlopen(status_response.download_url)
-decoded_response = download_response.read().decode('cp437')
+pdf_data = download_response.read()
 
-if not decoded_response.startswith("%PDF-1.5"):
-  raise ValueError(f"Invalid PDF expected: %PDF-1.5 recieved: {decoded_response[0:8]}")
+file_path = "/app/tmp/test_output/" + os.path.basename(__file__) + "_python_" + platform.python_version() + ".pdf"
+
+with open(file_path, "wb") as f:
+  f.write(pdf_data)
+
+stream = os.popen("qpdf --check " + file_path + " 2>&1")
+output = stream.read()
+close_value = stream.close()
+if close_value is not None:
+  with open(file_path, "rb") as f:
+    decoded_response = f.read().decode('cp437')
+    message = "Invalid PDF expected: %PDF-1.5 recieved:\n"
+    message += decoded_response[0:8]
+    message += "\n\nqpdf --check:\n" + output
+    raise ValueError(message)
+
