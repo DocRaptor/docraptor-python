@@ -1,0 +1,13 @@
+diff --git a/docraptor/configuration.py b/docraptor/configuration.py
+index 8bfb286..109fd17 100644
+--- a/docraptor/configuration.py
++++ b/docraptor/configuration.py
+@@ -387,7 +387,7 @@ conf = docraptor.Configuration(
+         :return: The Auth Settings information dict.
+         """
+         auth = {}
+-        if self.username is not None and self.password is not None:
++        if self.username is not None or self.password is not None:
+             auth['basicAuth'] = {
+                 'type': 'basic',
+                 'in': 'header',
