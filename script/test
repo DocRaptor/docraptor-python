@@ -2,28 +2,53 @@
 set -e
 cd "$(dirname "$0")/.."
 
-cd test
 
-# check dependencies
-python3 --version > /dev/null     || (echo "python3 must be installed"; exit 1)
-virtualenv --version > /dev/null || (echo "virtualenv must be installed"; exit 1)
+[ -f script/build ] && script/build
 
-for version in 3; do
-  rm -rf venv-$version
-  virtualenv --python="$(which python$version)" "venv-$version"
-  source venv-$version/bin/activate
-  pip install --upgrade ../
-
-  # runs a test file with PASS/FAIL message
-  run_test() {
-    (python "$1" && echo "PASS $1 (Python $version)") || (echo "FAIL $1 (Python $version)"; exit 1)
-  }
-
-  if [ "$1" == "" ]; then
-    for test in *.py; do
-      run_test "$test"
-    done
+run_tests() {
+  runtime_env="$1"
+  if time script/docker -i "$runtime_env" /app/script/inside_container/test; then
+    tput bold    # bold text
+    tput setaf 2 # green text
+    echo "======================================"
+    echo "$runtime_env Passed"
+    echo "======================================"
+    tput sgr0    # reset to default text
+    return 0
   else
-    run_test "$1.py"
+    tput bold    # bold text
+    tput setaf 1 # red text
+    echo "======================================"
+    echo "$runtime_env FAILED"
+    echo "======================================"
+    tput sgr0    # reset to default text
+    return 1
   fi
+}
+
+success="true"
+
+for runtime_env in $(cat .runtime-environments | grep -v '^#'); do
+  echo
+  echo
+  echo "Testing runtime env $runtime_env"
+  run_tests "$runtime_env" || success="false"
 done
+
+if [ $success == "true" ]; then
+  tput bold    # bold text
+  tput setaf 2 # green text
+  echo "======================================"
+  echo "=      Full Test Suite Passed        ="
+  echo "======================================"
+  tput sgr0    # reset to default text
+  exit 0
+else
+  tput bold    # bold text
+  tput setaf 1 # red text
+  echo "======================================"
+  echo "=      Full Test Suite FAILED        ="
+  echo "======================================"
+  tput sgr0    # reset to default text
+  exit 1
+fi

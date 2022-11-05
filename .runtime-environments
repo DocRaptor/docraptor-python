@@ -1,0 +1,14 @@
+# Versions without patch numbers will test the latest patch version. We include
+# specific patch versions to provide consistency. We include version numbers
+# without the patch version in order to automatically test the latest patch
+# version of each minor version.
+# 3.3-jessie # this didn't work before, so I'm not adding support (because swagger didn't support it)
+python:3.4-stretch
+python:3.5-buster
+python:3.6-bullseye
+python:3.7-bullseye
+python:3.8-bullseye
+python:3.9.14-bullseye
+python:3.10-bullseye
+python:3.11-bullseye
+python:3.12-rc-bullseye
