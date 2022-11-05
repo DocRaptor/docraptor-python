@@ -113,7 +113,7 @@ conf = docraptor.Configuration(
                  ):
         """Constructor
         """
-        self._base_path = "https://docraptor.com" if host is None else host
+        self._base_path = "https://api.docraptor.com" if host is None else host
         """Default Base url
         """
         self.server_index = 0 if server_index is None and host is None else server_index
@@ -415,7 +415,7 @@ conf = docraptor.Configuration(
         """
         return [
             {
-                'url': "https://docraptor.com",
+                'url': "https://api.docraptor.com",
                 'description': "No description provided",
             }
         ]
