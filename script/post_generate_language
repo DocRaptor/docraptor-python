@@ -4,3 +4,8 @@ cd "$(dirname "$0")/.."
 
 echo "Removing trailing whitespace..."
 find docraptor -name "*.py" -type f -exec sed -E -i '' 's/[[:space:]]+$//g' {} +
+
+if compgen -G "patches/*.patch" > /dev/null; then
+  echo "Apply patches to generated code"
+  git apply --verbose patches/*.patch
+fi
