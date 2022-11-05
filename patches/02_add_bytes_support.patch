@@ -1,0 +1,44 @@
+diff --git a/docraptor/api/doc_api.py b/docraptor/api/doc_api.py
+index 28cb663..32debd1 100644
+--- a/docraptor/api/doc_api.py
++++ b/docraptor/api/doc_api.py
+@@ -295,7 +295,7 @@ class DocApi(object):
+         auth_settings = ['basicAuth']  # noqa: E501
+ 
+         response_types_map = {
+-            200: "str",
++            200: "bytes",
+             400: None,
+             401: None,
+             403: None,
+@@ -852,7 +852,7 @@ class DocApi(object):
+         auth_settings = ['basicAuth']  # noqa: E501
+ 
+         response_types_map = {
+-            200: "str",
++            200: "bytes",
+             400: None,
+             403: None,
+             500: None,
+diff --git a/docraptor/api_client.py b/docraptor/api_client.py
+index 94184ac..44d6e6f 100644
+--- a/docraptor/api_client.py
++++ b/docraptor/api_client.py
+@@ -62,6 +62,7 @@ class ApiClient(object):
+         'date': datetime.date,
+         'datetime': datetime.datetime,
+         'object': object,
++        'bytes': bytes,
+     }
+     _pool = None
+ 
+@@ -277,6 +277,9 @@ class ApiClient(object):
+         if response_type == "file":
+             return self.__deserialize_file(response)
+
++        if response_type == "bytes":
++            return response.data
++
+         # fetch data from response object
+         try:
+             data = json.loads(response.data)
