@@ -1,3 +1,8 @@
+### 3.0.0 [TBD]
+* Switch API host to more secure api.docraptor.com (dropping old TLS)
+* Switch from swagger to openapi-generator v6.0.1 (better maintained)
+* Remove support for python <3.4
+
 ### 2.0.0 [July 31, 2020]
 * Drop Support for Python 2
   _(We will now only develop and test against Python 3)_
