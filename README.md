@@ -53,7 +53,7 @@ Stuck? We're experts at turning HTML into PDFs so please [email us](mailto:suppo
 
 ## Development
 
-The majority of the code in this repo is generated using swagger-codegen on [docraptor.yaml](docraptor.yaml). You can modify this file and regenerate the client using `script/generate_language python`.
+The majority of the code in this repo is generated using openapi-generator on [docraptor.yaml](docraptor.yaml). You can modify this file and regenerate the client using `script/generate_language`.
 
 The generated client needed a few fixes
 - https://github.com/swagger-api/swagger-codegen/issues/2305
@@ -65,7 +65,7 @@ The generated client needed a few fixes
 2. Merge feature branch(es) into master
 3. `script/test`
 4. Increment version in code:
-  - `swagger-config.json`
+  - `generator-config.json`
   - `setup.py`
   - `docraptor/api_client.py`
   - `docraptor/configuration.py`
