@@ -64,20 +64,22 @@ The generated client needed a few fixes
 1. Pull latest master
 2. Merge feature branch(es) into master
 3. `script/test`
-4. Increment version in code:
+4. Increment version:
   - `generator-config.json`
-  - `setup.py`
+5. Run `script/generate_language` to update generated version numbers:
+  - `docraptor/__init__.py`
   - `docraptor/api_client.py`
   - `docraptor/configuration.py`
-5. Update [CHANGELOG.md](CHANGELOG.md)
-6. Commit "Release version vX.Y.Z"
-7. Push to GitHub
-8. Tag version: `git tag 'vX.Y.Z' && git push --tags`
-9. Clean out any old packages `rm dist/*`
-10. Build packages `python setup.py sdist bdist_wheel`
-11. Upload packages `twine upload dist/*`
-12. Verify package release at https://pypi.python.org/pypi/docraptor
-13. Update documentation on docraptor.com
+  - `setup.py`
+6. Update [CHANGELOG.md](CHANGELOG.md)
+7. Commit "Release version vX.Y.Z"
+8. Push to GitHub
+9. Tag version: `git tag 'vX.Y.Z' && git push --tags`
+10. Clean out any old packages `rm dist/*`
+11. Build packages `python setup.py sdist bdist_wheel`
+12. Upload packages `twine upload dist/*`
+13. Verify package release at https://pypi.python.org/pypi/docraptor
+14. Update documentation on docraptor.com
 
 
 ## Version Policy
