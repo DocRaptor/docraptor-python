@@ -1,4 +1,4 @@
-### 3.0.0 [TBD]
+### 3.0.0 [November 16, 2022]
 * Switch API host to more secure api.docraptor.com (dropping old TLS)
 * Switch from swagger to openapi-generator v6.0.1 (better maintained)
 * Remove support for python <3.4
