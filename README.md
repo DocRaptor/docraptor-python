@@ -75,11 +75,9 @@ The generated client needed a few fixes
 7. Commit "Release version vX.Y.Z"
 8. Push to GitHub
 9. Tag version: `git tag 'vX.Y.Z' && git push --tags`
-10. Clean out any old packages `rm dist/*`
-11. Build packages `python setup.py sdist bdist_wheel`
-12. Upload packages `twine upload dist/*`
-13. Verify package release at https://pypi.python.org/pypi/docraptor
-14. Update documentation on docraptor.com
+10. `script/release`
+11. Verify package release at https://pypi.python.org/pypi/docraptor
+12. Update documentation on docraptor.com
 
 
 ## Version Policy

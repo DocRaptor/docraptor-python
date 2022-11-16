@@ -1,0 +1,29 @@
+#!/bin/bash
+set -e
+[[ "$TRACE" == "true" ]] && set -x
+cd "$(dirname "$0")/.."
+
+if [[ "$INSIDE_DOCKER" != "true" ]]; then
+  exec script/docker "/app/script/$(basename "$0")"
+fi
+
+echo "Clearing old packages..."
+[ -d dist ] && rm dist/*
+echo "Old packaged cleared."
+echo
+
+echo "Building packages..."
+# TODO: /usr/local/lib/python3.12/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+python setup.py sdist bdist_wheel
+echo "Packages built."
+echo
+
+echo "Installing twine to allow publishing..."
+pip install --upgrade twine
+echo "Twine installed."
+echo
+
+echo "Publishing packages to pypi..."
+twine upload dist/*
+echo "Packages published."
+echo
