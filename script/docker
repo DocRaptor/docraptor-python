@@ -53,4 +53,4 @@ docker run -it --rm \
   --mount type=bind,source="$(pwd)",target=/app \
   "${mounts[@]}" \
   "$image" \
-  "$command"
+  sh -c "[ -f /app/script/inside_container/init ] && /app/script/inside_container/init; $command"

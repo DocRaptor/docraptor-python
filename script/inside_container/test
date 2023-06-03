@@ -4,8 +4,7 @@ cd "$(dirname "$0")/../.."
 
 cd test
 
-apt update
-DEBIAN_FRONTEND=noninteractive apt-get install -qq qpdf
+apk add qpdf
 
 pip install --upgrade ../
 
