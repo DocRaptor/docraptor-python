@@ -74,7 +74,7 @@ configuration = docraptor.Configuration(
 with docraptor.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = docraptor.DocApi(api_client)
-    doc = docraptor.Doc() # Doc | The document to be created.
+    doc = docraptor.Doc() # Doc | 
 
     try:
         api_response = api_instance.create_async_doc(doc)

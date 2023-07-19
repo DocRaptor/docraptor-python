@@ -46,7 +46,7 @@ class DocApi(object):
         >>> thread = api.create_async_doc(doc, async_req=True)
         >>> result = thread.get()
 
-        :param doc: The document to be created. (required)
+        :param doc: (required)
         :type doc: Doc
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -76,7 +76,7 @@ class DocApi(object):
         >>> thread = api.create_async_doc_with_http_info(doc, async_req=True)
         >>> result = thread.get()
 
-        :param doc: The document to be created. (required)
+        :param doc: (required)
         :type doc: Doc
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -147,7 +147,15 @@ class DocApi(object):
             body_params = local_var_params['doc']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'])  # noqa: E501
+            ['*/*'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        content_types_list = local_var_params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json'],
+                'POST', body_params))  # noqa: E501
+        if content_types_list:
+                header_params['Content-Type'] = content_types_list
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
@@ -188,7 +196,7 @@ class DocApi(object):
         >>> thread = api.create_doc(doc, async_req=True)
         >>> result = thread.get()
 
-        :param doc: The document to be created. (required)
+        :param doc: (required)
         :type doc: Doc
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -218,7 +226,7 @@ class DocApi(object):
         >>> thread = api.create_doc_with_http_info(doc, async_req=True)
         >>> result = thread.get()
 
-        :param doc: The document to be created. (required)
+        :param doc: (required)
         :type doc: Doc
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -289,7 +297,15 @@ class DocApi(object):
             body_params = local_var_params['doc']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'])  # noqa: E501
+            ['*/*'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        content_types_list = local_var_params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json'],
+                'POST', body_params))  # noqa: E501
+        if content_types_list:
+                header_params['Content-Type'] = content_types_list
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
@@ -330,7 +346,7 @@ class DocApi(object):
         >>> thread = api.create_hosted_async_doc(doc, async_req=True)
         >>> result = thread.get()
 
-        :param doc: The document to be created. (required)
+        :param doc: (required)
         :type doc: Doc
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -360,7 +376,7 @@ class DocApi(object):
         >>> thread = api.create_hosted_async_doc_with_http_info(doc, async_req=True)
         >>> result = thread.get()
 
-        :param doc: The document to be created. (required)
+        :param doc: (required)
         :type doc: Doc
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -431,7 +447,15 @@ class DocApi(object):
             body_params = local_var_params['doc']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'])  # noqa: E501
+            ['*/*'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        content_types_list = local_var_params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json'],
+                'POST', body_params))  # noqa: E501
+        if content_types_list:
+                header_params['Content-Type'] = content_types_list
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
@@ -573,7 +597,15 @@ class DocApi(object):
             body_params = local_var_params['doc']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'])  # noqa: E501
+            ['*/*'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        content_types_list = local_var_params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json'],
+                'POST', body_params))  # noqa: E501
+        if content_types_list:
+                header_params['Content-Type'] = content_types_list
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
@@ -846,7 +878,7 @@ class DocApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'])  # noqa: E501
+            ['*/*'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501
@@ -986,7 +1018,7 @@ class DocApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'])  # noqa: E501
+            ['*/*'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['basicAuth']  # noqa: E501

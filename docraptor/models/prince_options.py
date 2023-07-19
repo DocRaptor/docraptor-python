@@ -65,7 +65,10 @@ class PrinceOptions(object):
         'javascript': 'bool',
         'css_dpi': 'int',
         'profile': 'str',
-        'pdf_title': 'str'
+        'pdf_title': 'str',
+        'iframes': 'bool',
+        'page_margin': 'str',
+        'pdf_forms': 'bool'
     }
 
     attribute_map = {
@@ -98,10 +101,13 @@ class PrinceOptions(object):
         'javascript': 'javascript',
         'css_dpi': 'css_dpi',
         'profile': 'profile',
-        'pdf_title': 'pdf_title'
+        'pdf_title': 'pdf_title',
+        'iframes': 'iframes',
+        'page_margin': 'page_margin',
+        'pdf_forms': 'pdf_forms'
     }
 
-    def __init__(self, baseurl=None, no_xinclude=None, no_network=None, no_parallel_downloads=None, http_user=None, http_password=None, http_proxy=None, http_timeout=None, insecure=None, media='print', no_author_style=None, no_default_style=None, no_embed_fonts=None, no_subset_fonts=None, no_compress=None, encrypt=None, key_bits=None, user_password=None, owner_password=None, disallow_print=None, disallow_copy=None, disallow_annotate=None, disallow_modify=None, debug=None, input='html', version=None, javascript=None, css_dpi=None, profile=None, pdf_title=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, baseurl=None, no_xinclude=None, no_network=None, no_parallel_downloads=None, http_user=None, http_password=None, http_proxy=None, http_timeout=None, insecure=None, media=None, no_author_style=None, no_default_style=None, no_embed_fonts=None, no_subset_fonts=None, no_compress=None, encrypt=None, key_bits=None, user_password=None, owner_password=None, disallow_print=None, disallow_copy=None, disallow_annotate=None, disallow_modify=None, debug=None, input=None, version=None, javascript=None, css_dpi=None, profile=None, pdf_title=None, iframes=None, page_margin=None, pdf_forms=None, local_vars_configuration=None):  # noqa: E501
         """PrinceOptions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -137,6 +143,9 @@ class PrinceOptions(object):
         self._css_dpi = None
         self._profile = None
         self._pdf_title = None
+        self._iframes = None
+        self._page_margin = None
+        self._pdf_forms = None
         self.discriminator = None
 
         if baseurl is not None:
@@ -199,6 +208,11 @@ class PrinceOptions(object):
             self.profile = profile
         if pdf_title is not None:
             self.pdf_title = pdf_title
+        self.iframes = iframes
+        if page_margin is not None:
+            self.page_margin = page_margin
+        if pdf_forms is not None:
+            self.pdf_forms = pdf_forms
 
     @property
     def baseurl(self):
@@ -588,6 +602,12 @@ class PrinceOptions(object):
         :param key_bits: The key_bits of this PrinceOptions.  # noqa: E501
         :type key_bits: int
         """
+        allowed_values = [40, 128]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and key_bits not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `key_bits` ({0}), must be one of {1}"  # noqa: E501
+                .format(key_bits, allowed_values)
+            )
 
         self._key_bits = key_bits
 
@@ -756,7 +776,7 @@ class PrinceOptions(object):
     def input(self):
         """Gets the input of this PrinceOptions.  # noqa: E501
 
-        Specify the input format.  # noqa: E501
+        Specify the input format, defaults to html.  # noqa: E501
 
         :return: The input of this PrinceOptions.  # noqa: E501
         :rtype: str
@@ -767,7 +787,7 @@ class PrinceOptions(object):
     def input(self, input):
         """Sets the input of this PrinceOptions.
 
-        Specify the input format.  # noqa: E501
+        Specify the input format, defaults to html.  # noqa: E501
 
         :param input: The input of this PrinceOptions.  # noqa: E501
         :type input: str
@@ -895,6 +915,75 @@ class PrinceOptions(object):
         """
 
         self._pdf_title = pdf_title
+
+    @property
+    def iframes(self):
+        """Gets the iframes of this PrinceOptions.  # noqa: E501
+
+        Enable loading of iframes.  # noqa: E501
+
+        :return: The iframes of this PrinceOptions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._iframes
+
+    @iframes.setter
+    def iframes(self, iframes):
+        """Sets the iframes of this PrinceOptions.
+
+        Enable loading of iframes.  # noqa: E501
+
+        :param iframes: The iframes of this PrinceOptions.  # noqa: E501
+        :type iframes: bool
+        """
+
+        self._iframes = iframes
+
+    @property
+    def page_margin(self):
+        """Gets the page_margin of this PrinceOptions.  # noqa: E501
+
+        Specify the page margin distance.  # noqa: E501
+
+        :return: The page_margin of this PrinceOptions.  # noqa: E501
+        :rtype: str
+        """
+        return self._page_margin
+
+    @page_margin.setter
+    def page_margin(self, page_margin):
+        """Sets the page_margin of this PrinceOptions.
+
+        Specify the page margin distance.  # noqa: E501
+
+        :param page_margin: The page_margin of this PrinceOptions.  # noqa: E501
+        :type page_margin: str
+        """
+
+        self._page_margin = page_margin
+
+    @property
+    def pdf_forms(self):
+        """Gets the pdf_forms of this PrinceOptions.  # noqa: E501
+
+        Make form fields editable by default.  # noqa: E501
+
+        :return: The pdf_forms of this PrinceOptions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._pdf_forms
+
+    @pdf_forms.setter
+    def pdf_forms(self, pdf_forms):
+        """Sets the pdf_forms of this PrinceOptions.
+
+        Make form fields editable by default.  # noqa: E501
+
+        :param pdf_forms: The pdf_forms of this PrinceOptions.  # noqa: E501
+        :type pdf_forms: bool
+        """
+
+        self._pdf_forms = pdf_forms
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

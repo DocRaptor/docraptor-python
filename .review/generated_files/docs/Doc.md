@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | A name for identifying your document. | 
 **document_type** | **str** | The type of document being created. | 
-**document_content** | **str** | The HTML data to be transformed into a document. You must supply content using document_content or document_url.  | 
+**document_content** | **str** | The HTML data to be transformed into a document. You must supply content using document_content or document_url.  | [optional] 
 **document_url** | **str** | The URL to fetch the HTML data to be transformed into a document. You must supply content using document_content or document_url.  | [optional] 
 **test** | **bool** | Enable test mode for this document. Test documents are not charged for but include a watermark. | [optional] [default to True]
 **pipeline** | **str** | Specify a specific verison of the DocRaptor Pipeline to use. | [optional] 

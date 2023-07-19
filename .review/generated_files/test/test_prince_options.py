@@ -45,14 +45,14 @@ class TestPrinceOptions(unittest.TestCase):
                 http_proxy = '', 
                 http_timeout = 56, 
                 insecure = True, 
-                media = 'print', 
+                media = '', 
                 no_author_style = True, 
                 no_default_style = True, 
                 no_embed_fonts = True, 
                 no_subset_fonts = True, 
                 no_compress = True, 
                 encrypt = True, 
-                key_bits = 56, 
+                key_bits = 40, 
                 user_password = '', 
                 owner_password = '', 
                 disallow_print = True, 
@@ -65,7 +65,10 @@ class TestPrinceOptions(unittest.TestCase):
                 javascript = True, 
                 css_dpi = 56, 
                 profile = '', 
-                pdf_title = ''
+                pdf_title = '', 
+                iframes = True, 
+                page_margin = '', 
+                pdf_forms = True
             )
         else :
             return PrinceOptions(

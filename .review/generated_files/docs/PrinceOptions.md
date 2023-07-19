@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **http_proxy** | **str** | Set the HTTP proxy server. | [optional] 
 **http_timeout** | **int** | Set the HTTP request timeout. | [optional] 
 **insecure** | **bool** | Disable SSL verification. | [optional] 
-**media** | **str** | Specify the CSS media type. Defaults to \&quot;print\&quot; but you may want to use \&quot;screen\&quot; for web styles. | [optional] [default to 'print']
+**media** | **str** | Specify the CSS media type. Defaults to \&quot;print\&quot; but you may want to use \&quot;screen\&quot; for web styles. | [optional] 
 **no_author_style** | **bool** | Ignore author stylesheets. | [optional] 
 **no_default_style** | **bool** | Ignore default stylesheets. | [optional] 
 **no_embed_fonts** | **bool** | Disable font embedding in PDFs. | [optional] 
@@ -28,12 +28,15 @@ Name | Type | Description | Notes
 **disallow_annotate** | **bool** | Disallow annotation of this PDF. | [optional] 
 **disallow_modify** | **bool** | Disallow modification of this PDF. | [optional] 
 **debug** | **bool** | Enable Prince debug mode. | [optional] 
-**input** | **str** | Specify the input format. | [optional] [default to 'html']
+**input** | **str** | Specify the input format, defaults to html. | [optional] 
 **version** | **str** | Deprecated, use the appropriate &#x60;pipeline&#x60; version. Specify a specific verison of PrinceXML to use. | [optional] 
 **javascript** | **bool** | Enable PrinceXML JavaScript. DocRaptor JavaScript parsing is also available elsewhere. | [optional] 
 **css_dpi** | **int** | Set the DPI when rendering CSS. Defaults to 96 but can be set with Prince 9.0 and up. | [optional] 
 **profile** | **str** | In Prince 9.0 and up you can set the PDF profile. | [optional] 
 **pdf_title** | **str** | Specify the PDF title, part of the document&#39;s metadata. | [optional] 
+**iframes** | **bool** | Enable loading of iframes. | [optional] 
+**page_margin** | **str** | Specify the page margin distance. | [optional] 
+**pdf_forms** | **bool** | Make form fields editable by default. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -50,7 +50,7 @@ configuration = docraptor.Configuration(
 with docraptor.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = docraptor.DocApi(api_client)
-    doc = docraptor.Doc() # Doc | The document to be created.
+    doc = docraptor.Doc() # Doc | 
 
     try:
         api_response = api_instance.create_async_doc(doc)
@@ -63,7 +63,7 @@ with docraptor.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **doc** | [**Doc**](Doc.md)| The document to be created. | 
+ **doc** | [**Doc**](Doc.md)|  | 
 
 ### Return type
 
@@ -75,8 +75,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml, application/pdf, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+ - **Content-Type**: application/json
+ - **Accept**: */*
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -127,7 +127,7 @@ configuration = docraptor.Configuration(
 with docraptor.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = docraptor.DocApi(api_client)
-    doc = docraptor.Doc() # Doc | The document to be created.
+    doc = docraptor.Doc() # Doc | 
 
     try:
         api_response = api_instance.create_doc(doc)
@@ -140,7 +140,7 @@ with docraptor.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **doc** | [**Doc**](Doc.md)| The document to be created. | 
+ **doc** | [**Doc**](Doc.md)|  | 
 
 ### Return type
 
@@ -152,8 +152,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml, application/pdf, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+ - **Content-Type**: application/json
+ - **Accept**: */*
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -204,7 +204,7 @@ configuration = docraptor.Configuration(
 with docraptor.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = docraptor.DocApi(api_client)
-    doc = docraptor.Doc() # Doc | The document to be created.
+    doc = docraptor.Doc() # Doc | 
 
     try:
         api_response = api_instance.create_hosted_async_doc(doc)
@@ -217,7 +217,7 @@ with docraptor.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **doc** | [**Doc**](Doc.md)| The document to be created. | 
+ **doc** | [**Doc**](Doc.md)|  | 
 
 ### Return type
 
@@ -229,8 +229,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml, application/pdf, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+ - **Content-Type**: application/json
+ - **Accept**: */*
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -306,8 +306,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml, application/pdf, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+ - **Content-Type**: application/json
+ - **Accept**: */*
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml, application/pdf, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+ - **Accept**: */*
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -533,7 +533,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json, application/xml, application/pdf, application/vnd.ms-excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+ - **Accept**: */*
 
 ### HTTP response details
 | Status code | Description | Response headers |

@@ -102,7 +102,8 @@ class Doc(object):
 
         self.name = name
         self.document_type = document_type
-        self.document_content = document_content
+        if document_content is not None:
+            self.document_content = document_content
         if document_url is not None:
             self.document_url = document_url
         if test is not None:
@@ -208,8 +209,6 @@ class Doc(object):
         :param document_content: The document_content of this Doc.  # noqa: E501
         :type document_content: str
         """
-        if self.local_vars_configuration.client_side_validation and document_content is None:  # noqa: E501
-            raise ValueError("Invalid value for `document_content`, must not be `None`")  # noqa: E501
 
         self._document_content = document_content
 
