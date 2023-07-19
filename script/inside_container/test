@@ -4,7 +4,7 @@ cd "$(dirname "$0")/../.."
 
 cd test
 
-apk add qpdf
+apk add qpdf poppler-utils
 
 pip install --upgrade ../
 
