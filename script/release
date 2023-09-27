@@ -7,6 +7,11 @@ if [[ "$INSIDE_DOCKER" != "true" ]]; then
   exec script/docker "/app/script/$(basename "$0")"
 fi
 
+echo "Setting up build utils..."
+apk add build-base libffi-dev
+echo "Build utils setup."
+echo
+
 echo "Clearing old packages..."
 [ -d dist ] && rm dist/*
 echo "Old packaged cleared."
